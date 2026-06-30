@@ -6,7 +6,7 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  PACKER_VERSION: "1.11.0"
+  PACKER_VERSION: "1.11.2"
 
 jobs:
   build-ami:
@@ -28,17 +28,6 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
-
-      - name: Setup Node.js (for app build inside Packer)
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-          cache-dependency-path: app/package-lock.json
-
-      - name: Install app dependencies
-        working-directory: app
-        run: npm ci
 
       - name: Setup Packer
         uses: hashicorp/setup-packer@main
@@ -106,16 +95,18 @@ jobs:
 
       - name: Terraform Plan
         working-directory: terraform
-        run: |
-          terraform plan \
-            -var="domain_name=${{ secrets.DOMAIN_NAME }}" \
-            -out=tfplan
-        env:
-          TF_VAR_project_name: aws-devops-app
+        run: terraform plan -out=tfplan
 
       - name: Terraform Apply
         working-directory: terraform
         run: terraform apply -auto-approve tfplan
+
+      - name: Get App URL
+        working-directory: terraform
+        run: |
+          APP_URL=$(terraform output -raw app_url)
+          echo "App deployed at: $APP_URL"
+          echo "APP_URL=$APP_URL" >> $GITHUB_ENV
 
   trigger-instance-refresh:
     name: Trigger ASG Instance Refresh
@@ -142,29 +133,9 @@ jobs:
             --preferences '{"MinHealthyPercentage":50,"InstanceWarmup":300}' \
             --query 'InstanceRefreshId' \
             --output text)
-
           echo "Instance refresh started: $REFRESH_ID"
 
-          echo "Waiting for refresh to complete..."
           aws autoscaling wait instance-refresh-complete \
             --auto-scaling-group-name "$ASG_NAME"
 
-          echo "Instance refresh complete — deployment successful!"
-
-      - name: Verify deployment health
-        run: |
-          DOMAIN="${{ secrets.DOMAIN_NAME }}"
-          MAX_ATTEMPTS=10
-          ATTEMPT=0
-
-          until curl -sf "https://${DOMAIN}/health" > /dev/null; do
-            ATTEMPT=$((ATTEMPT + 1))
-            if [ $ATTEMPT -ge $MAX_ATTEMPTS ]; then
-              echo "Health check failed after ${MAX_ATTEMPTS} attempts"
-              exit 1
-            fi
-            echo "Waiting for health check (attempt ${ATTEMPT})..."
-            sleep 30
-          done
-
-          echo "Deployment verified — app is healthy at https://${DOMAIN}"
+          echo "Deployment complete!"

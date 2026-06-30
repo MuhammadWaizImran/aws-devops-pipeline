@@ -13,11 +13,6 @@ variable "aws_region" {
   default = "us-east-1"
 }
 
-variable "domain_name" {
-  type        = string
-  description = "Your registered domain name (must be in Route53)"
-}
-
 variable "vpc_cidr" {
   type    = string
   default = "10.0.0.0/16"
