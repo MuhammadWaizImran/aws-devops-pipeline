@@ -18,6 +18,11 @@ variable "target_group_arn" {
   type = string
 }
 
+variable "ami_id" {
+  type        = string
+  description = "AMI ID built by Packer — passed from CD pipeline"
+}
+
 variable "instance_type" {
   type    = string
   default = "t3.small"

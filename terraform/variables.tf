@@ -67,3 +67,9 @@ variable "db_instance_class" {
   type    = string
   default = "db.t3.micro"
 }
+
+variable "ami_id" {
+  type        = string
+  description = "AMI ID built by Packer — passed from the CD pipeline"
+  default     = ""
+}

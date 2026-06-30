@@ -46,16 +46,22 @@ jobs:
         id: packer-build
         working-directory: packer
         run: |
+          set -o pipefail
           packer build \
             -var "app_version=${{ github.sha }}" \
             -machine-readable \
             ubuntu.pkr.hcl | tee build.log
 
           AMI_ID=$(grep 'artifact,0,id' build.log | cut -d, -f6 | cut -d: -f2)
+          if [ -z "$AMI_ID" ]; then
+            echo "ERROR: Could not extract AMI ID from Packer output"
+            exit 1
+          fi
           echo "ami_id=${AMI_ID}" >> $GITHUB_OUTPUT
-          echo "Built AMI: ${AMI_ID}"
+          echo "Successfully built AMI: ${AMI_ID}"
 
       - name: Upload build log
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: packer-build-log
@@ -91,7 +97,7 @@ jobs:
 
       - name: Terraform Plan
         working-directory: terraform
-        run: terraform plan -out=tfplan
+        run: terraform plan -var="ami_id=${{ needs.build-ami.outputs.ami_id }}" -out=tfplan
 
       - name: Terraform Apply
         working-directory: terraform
@@ -101,7 +107,9 @@ jobs:
         working-directory: terraform
         run: |
           APP_URL=$(terraform output -raw app_url)
+          echo "=========================================="
           echo "App deployed at: $APP_URL"
+          echo "=========================================="
 
   trigger-instance-refresh:
     name: Trigger ASG Instance Refresh

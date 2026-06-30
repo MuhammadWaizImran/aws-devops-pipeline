@@ -91,6 +91,7 @@ module "ec2_asg" {
   public_subnet_ids     = module.vpc.public_subnet_ids
   ec2_security_group_id = module.vpc.ec2_security_group_id
   target_group_arn      = module.alb.target_group_arn
+  ami_id                = var.ami_id
   instance_type         = var.instance_type
   asg_min_size          = var.asg_min_size
   asg_max_size          = var.asg_max_size

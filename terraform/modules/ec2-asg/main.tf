@@ -1,18 +1,3 @@
-data "aws_ami" "app" {
-  most_recent = true
-  owners      = ["self"]
-
-  filter {
-    name   = "name"
-    values = ["aws-devops-app-*"]
-  }
-
-  filter {
-    name   = "state"
-    values = ["available"]
-  }
-}
-
 resource "aws_iam_role" "ec2" {
   name = "${var.project_name}-ec2-role"
 
@@ -71,7 +56,7 @@ resource "aws_iam_instance_profile" "ec2" {
 
 resource "aws_launch_template" "app" {
   name_prefix   = "${var.project_name}-lt-"
-  image_id      = data.aws_ami.app.id
+  image_id      = var.ami_id
   instance_type = var.instance_type
 
   iam_instance_profile { arn = aws_iam_instance_profile.ec2.arn }
