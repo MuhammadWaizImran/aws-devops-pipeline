@@ -47,30 +47,28 @@ jobs:
         working-directory: packer
         env:
           PACKER_LOG: 1
-          PACKER_LOG_PATH: packer-debug.log
         run: |
           set -o pipefail
           packer build \
             -var "app_version=${{ github.sha }}" \
             -machine-readable \
-            ubuntu.pkr.hcl | tee build.log
+            ubuntu.pkr.hcl 2>&1 | tee build.log
 
           AMI_ID=$(grep 'artifact,0,id' build.log | cut -d, -f6 | cut -d: -f2)
           if [ -z "$AMI_ID" ]; then
             echo "ERROR: Could not extract AMI ID from Packer output"
+            cat build.log
             exit 1
           fi
           echo "ami_id=${AMI_ID}" >> $GITHUB_OUTPUT
           echo "Successfully built AMI: ${AMI_ID}"
 
-      - name: Upload build logs
+      - name: Upload build log
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: packer-build-logs
-          path: |
-            packer/build.log
-            packer/packer-debug.log
+          name: packer-build-log
+          path: packer/build.log
 
   deploy-infrastructure:
     name: Deploy Terraform Infrastructure

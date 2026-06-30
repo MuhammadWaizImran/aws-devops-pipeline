@@ -43,8 +43,10 @@ source "amazon-ebs" "ubuntu" {
     owners      = ["099720109477"]
   }
 
-  ssh_username  = "ubuntu"
-  ssh_timeout   = "15m"
+  ssh_username                = "ubuntu"
+  ssh_timeout                 = "15m"
+  associate_public_ip_address = true
+  ssh_interface               = "public_ip"
 
   ami_block_device_mappings {
     device_name           = "/dev/sda1"
