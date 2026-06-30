@@ -61,21 +61,31 @@ resource "aws_cloudwatch_dashboard" "main" {
   dashboard_body = jsonencode({
     widgets = [
       {
-        type       = "metric"
-        x          = 0; y = 0; width = 12; height = 6
+        type   = "metric"
+        x      = 0
+        y      = 0
+        width  = 12
+        height = 6
         properties = {
           title   = "EC2 CPU Utilization"
           metrics = [["AWS/EC2", "CPUUtilization", "AutoScalingGroupName", var.asg_name]]
-          period  = 60; stat = "Average"; region = var.aws_region
+          period  = 60
+          stat    = "Average"
+          region  = var.aws_region
         }
       },
       {
-        type       = "metric"
-        x          = 12; y = 0; width = 12; height = 6
+        type   = "metric"
+        x      = 12
+        y      = 0
+        width  = 12
+        height = 6
         properties = {
           title   = "ALB Request Count"
           metrics = [["AWS/ApplicationELB", "RequestCount", "LoadBalancer", var.alb_arn_suffix]]
-          period  = 60; stat = "Sum"; region = var.aws_region
+          period  = 60
+          stat    = "Sum"
+          region  = var.aws_region
         }
       }
     ]
