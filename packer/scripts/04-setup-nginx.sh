@@ -1,8 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
+export DEBIAN_FRONTEND=noninteractive
+
 echo ">>> Installing Nginx..."
-sudo apt-get install -y nginx
+sudo -E apt-get install -y nginx
 
 echo ">>> Writing Nginx config..."
 sudo tee /etc/nginx/sites-available/app > /dev/null <<'EOF'

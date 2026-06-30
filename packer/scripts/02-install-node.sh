@@ -1,13 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
+export DEBIAN_FRONTEND=noninteractive
+
 echo ">>> Installing Node.js 20 LTS..."
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-echo ">>> Installing PM2 process manager..."
-sudo npm install -g pm2
+sudo -E apt-get install -y nodejs
 
 echo ">>> Node version: $(node --version)"
 echo ">>> NPM version: $(npm --version)"
-echo ">>> Node.js + PM2 install complete."
+echo ">>> Node.js install complete."

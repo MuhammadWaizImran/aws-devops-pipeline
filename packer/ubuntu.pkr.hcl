@@ -19,7 +19,7 @@ variable "app_version" {
 
 variable "instance_type" {
   type    = string
-  default = "t3.micro"
+  default = "t3.small"
 }
 
 locals {
@@ -31,7 +31,7 @@ source "amazon-ebs" "ubuntu" {
   region        = var.aws_region
   instance_type = var.instance_type
   ami_name      = local.ami_name
-  ami_description = "AWS DevOps App AMI - Next.js served via Nginx - ${local.timestamp}"
+  ami_description = "AWS DevOps App AMI — Next.js + Nginx — ${local.timestamp}"
 
   source_ami_filter {
     filters = {
@@ -40,10 +40,18 @@ source "amazon-ebs" "ubuntu" {
       virtualization-type = "hvm"
     }
     most_recent = true
-    owners      = ["099720109477"] # Canonical
+    owners      = ["099720109477"]
   }
 
-  ssh_username = "ubuntu"
+  ssh_username  = "ubuntu"
+  ssh_timeout   = "15m"
+
+  ami_block_device_mappings {
+    device_name           = "/dev/sda1"
+    volume_size           = 20
+    volume_type           = "gp3"
+    delete_on_termination = true
+  }
 
   tags = {
     Name        = local.ami_name
@@ -52,19 +60,15 @@ source "amazon-ebs" "ubuntu" {
     BuildDate   = local.timestamp
     ManagedBy   = "packer"
   }
-
-  launch_block_device_mappings {
-    device_name           = "/dev/sda1"
-    volume_size           = 20
-    volume_type           = "gp3"
-    delete_on_termination = true
-    encrypted             = true
-  }
 }
 
 build {
   name    = "aws-devops-app"
   sources = ["source.amazon-ebs.ubuntu"]
+
+  provisioner "shell" {
+    inline = ["mkdir -p /tmp/app"]
+  }
 
   provisioner "shell" {
     script = "scripts/01-system-setup.sh"
@@ -76,7 +80,7 @@ build {
 
   provisioner "file" {
     source      = "../app/"
-    destination = "/tmp/app"
+    destination = "/tmp/app/"
   }
 
   provisioner "shell" {

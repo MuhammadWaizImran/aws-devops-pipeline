@@ -45,6 +45,9 @@ jobs:
       - name: Packer Build AMI
         id: packer-build
         working-directory: packer
+        env:
+          PACKER_LOG: 1
+          PACKER_LOG_PATH: packer-debug.log
         run: |
           set -o pipefail
           packer build \
@@ -60,12 +63,14 @@ jobs:
           echo "ami_id=${AMI_ID}" >> $GITHUB_OUTPUT
           echo "Successfully built AMI: ${AMI_ID}"
 
-      - name: Upload build log
+      - name: Upload build logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: packer-build-log
-          path: packer/build.log
+          name: packer-build-logs
+          path: |
+            packer/build.log
+            packer/packer-debug.log
 
   deploy-infrastructure:
     name: Deploy Terraform Infrastructure
