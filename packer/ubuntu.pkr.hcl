@@ -69,7 +69,11 @@ build {
   sources = ["source.amazon-ebs.ubuntu"]
 
   provisioner "shell" {
-    inline = ["mkdir -p /tmp/app"]
+    inline = [
+      "mkdir -p /tmp/standalone",
+      "mkdir -p /tmp/static",
+      "mkdir -p /tmp/public"
+    ]
   }
 
   provisioner "shell" {
@@ -81,12 +85,22 @@ build {
   }
 
   provisioner "file" {
-    source      = "../app/"
-    destination = "/tmp/app/"
+    source      = "../app/.next/standalone/"
+    destination = "/tmp/standalone/"
+  }
+
+  provisioner "file" {
+    source      = "../app/.next/static/"
+    destination = "/tmp/static/"
+  }
+
+  provisioner "file" {
+    source      = "../app/public/"
+    destination = "/tmp/public/"
   }
 
   provisioner "shell" {
-    script = "scripts/03-build-app.sh"
+    script = "scripts/03-setup-app.sh"
   }
 
   provisioner "shell" {
@@ -98,6 +112,6 @@ build {
   }
 
   provisioner "shell" {
-    inline = ["sudo rm -rf /tmp/app"]
+    inline = ["sudo rm -rf /tmp/standalone /tmp/static /tmp/public"]
   }
 }

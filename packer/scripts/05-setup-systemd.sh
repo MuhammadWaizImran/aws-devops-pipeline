@@ -25,9 +25,6 @@ SyslogIdentifier=nextjs-app
 WantedBy=multi-user.target
 EOF
 
-sudo cp -r /opt/app/.next/static /opt/app/.next/standalone/.next/static
-sudo cp -r /opt/app/public /opt/app/.next/standalone/public 2>/dev/null || true
-
 sudo systemctl daemon-reload
 sudo systemctl enable nextjs-app
 sudo systemctl enable nginx
