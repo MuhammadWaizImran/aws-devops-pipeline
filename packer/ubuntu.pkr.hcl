@@ -31,7 +31,7 @@ source "amazon-ebs" "ubuntu" {
   region        = var.aws_region
   instance_type = var.instance_type
   ami_name      = local.ami_name
-  ami_description = "AWS DevOps App AMI — Next.js + Nginx — ${local.timestamp}"
+  ami_description = "AWS DevOps App AMI - Next.js + Nginx - ${local.timestamp}"
 
   source_ami_filter {
     filters = {
