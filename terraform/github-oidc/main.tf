@@ -113,7 +113,12 @@ resource "aws_iam_role_policy" "github_actions_permissions" {
           "iam:CreateInstanceProfile", "iam:DeleteInstanceProfile",
           "iam:AddRoleToInstanceProfile", "iam:RemoveRoleFromInstanceProfile",
           "iam:PassRole", "iam:GetRole", "iam:GetInstanceProfile",
-          "iam:ListRolePolicies", "iam:ListAttachedRolePolicies"
+          "iam:ListRolePolicies", "iam:ListAttachedRolePolicies",
+          "iam:TagRole", "iam:UntagRole",
+          "iam:TagInstanceProfile", "iam:UntagInstanceProfile",
+          "iam:CreateServiceLinkedRole",
+          "iam:ListInstanceProfilesForRole", "iam:UpdateRole",
+          "iam:GetRolePolicy"
         ]
         Resource = "*"
       },
