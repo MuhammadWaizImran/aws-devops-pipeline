@@ -103,6 +103,7 @@ resource "aws_autoscaling_group" "app" {
   target_group_arns         = [var.target_group_arn]
   health_check_type         = "ELB"
   health_check_grace_period = 300
+  wait_for_capacity_timeout = "0"
 
   launch_template {
     id      = aws_launch_template.app.id
