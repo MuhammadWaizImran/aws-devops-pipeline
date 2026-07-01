@@ -4,15 +4,14 @@ app/.next/
 app/out/
 app/.env*
 
-# Terraform
+# Terraform — provider binaries and state (never commit state or secrets)
 **/.terraform/
 **/*.tfstate
 **/*.tfstate.backup
-**/.terraform.lock.hcl
 **/tfplan
 terraform/terraform.tfvars
 
-# Packer
+# Packer logs and cache
 packer/*.log
 packer/packer_cache/
 
@@ -24,3 +23,6 @@ Thumbs.db
 *.pem
 *.key
 .env
+
+# Large files
+*.png.bak
