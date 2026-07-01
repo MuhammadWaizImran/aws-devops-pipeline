@@ -151,7 +151,22 @@ jobs:
             --output text)
           echo "Instance refresh started: $REFRESH_ID"
 
-          aws autoscaling wait instance-refresh-complete \
-            --auto-scaling-group-name "$ASG_NAME"
-
-          echo "Deployment complete!"
+          echo "Waiting for instance refresh to complete..."
+          for i in $(seq 1 40); do
+            STATUS=$(aws autoscaling describe-instance-refreshes \
+              --auto-scaling-group-name "$ASG_NAME" \
+              --instance-refresh-ids "$REFRESH_ID" \
+              --query 'InstanceRefreshes[0].Status' \
+              --output text)
+            echo "Status: $STATUS"
+            if [ "$STATUS" = "Successful" ]; then
+              echo "Deployment complete!"
+              exit 0
+            elif [ "$STATUS" = "Failed" ] || [ "$STATUS" = "Cancelled" ]; then
+              echo "Instance refresh $STATUS"
+              exit 1
+            fi
+            sleep 30
+          done
+          echo "Timed out waiting for instance refresh"
+          exit 1
