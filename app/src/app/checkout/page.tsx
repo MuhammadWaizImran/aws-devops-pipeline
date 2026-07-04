@@ -33,10 +33,10 @@ const STEP_LABELS: Record<Step, string> = {
 const inputStyle: React.CSSProperties = {
   width: '100%',
   padding: '12px 14px',
-  border: '1px solid #DAD4C8',
-  background: '#F5F3EF',
+  border: '1px solid #2a2826',
+  background: '#1a1916',
   fontSize: '14px',
-  color: '#141310',
+  color: '#F5F3EF',
   outline: 'none',
   transition: 'border-color 0.2s',
 }
@@ -119,13 +119,14 @@ export default function CheckoutPage() {
           style={{
             width: '56px',
             height: '56px',
-            border: '2px solid #141310',
+            border: '2px solid #DAD4C8',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             margin: '0 auto 28px',
             fontSize: '22px',
+            color: '#DAD4C8',
           }}
         >
           &#10003;
@@ -146,18 +147,19 @@ export default function CheckoutPage() {
             fontSize: '36px',
             fontWeight: 500,
             marginBottom: '16px',
+            color: '#F5F3EF',
           }}
         >
           Thank you, {shipping.firstName}.
         </h1>
-        <p style={{ fontSize: '15px', color: '#6b6558', marginBottom: '8px' }}>
+        <p style={{ fontSize: '15px', color: '#9a9284', marginBottom: '8px' }}>
           Your order has been placed successfully.
         </p>
         {orderNumber && (
           <p
             style={{
               fontSize: '14px',
-              color: '#141310',
+              color: '#DAD4C8',
               marginBottom: '40px',
               fontWeight: 500,
             }}
@@ -165,7 +167,7 @@ export default function CheckoutPage() {
             Order #{orderNumber}
           </p>
         )}
-        <p style={{ fontSize: '13px', color: '#6b6558', marginBottom: '40px' }}>
+        <p style={{ fontSize: '13px', color: '#9a9284', marginBottom: '40px' }}>
           A confirmation email will be sent to you shortly.
         </p>
         <Link
@@ -173,8 +175,8 @@ export default function CheckoutPage() {
           style={{
             display: 'inline-block',
             padding: '14px 40px',
-            background: '#141310',
-            color: '#F5F3EF',
+            background: '#DAD4C8',
+            color: '#0d0c0a',
             fontSize: '12px',
             letterSpacing: '0.14em',
             fontWeight: 500,
@@ -195,7 +197,7 @@ export default function CheckoutPage() {
         style={{
           textAlign: 'center',
           marginBottom: '48px',
-          borderBottom: '1px solid #DAD4C8',
+          borderBottom: '1px solid #2a2826',
           paddingBottom: '24px',
         }}
       >
@@ -206,7 +208,7 @@ export default function CheckoutPage() {
             fontSize: '22px',
             fontWeight: 600,
             letterSpacing: '0.14em',
-            color: '#141310',
+            color: '#F5F3EF',
             display: 'block',
             marginBottom: '24px',
           }}
@@ -239,14 +241,14 @@ export default function CheckoutPage() {
                     height: '28px',
                     borderRadius: '50%',
                     border: '1px solid',
-                    borderColor: i <= stepIndex ? '#141310' : '#DAD4C8',
-                    background: i < stepIndex ? '#141310' : 'transparent',
+                    borderColor: i <= stepIndex ? '#DAD4C8' : '#2a2826',
+                    background: i < stepIndex ? '#DAD4C8' : 'transparent',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontSize: '11px',
                     fontWeight: 600,
-                    color: i < stepIndex ? '#F5F3EF' : i === stepIndex ? '#141310' : '#9a9284',
+                    color: i < stepIndex ? '#0d0c0a' : i === stepIndex ? '#DAD4C8' : '#6b6558',
                   }}
                 >
                   {i < stepIndex ? '✓' : i + 1}
@@ -255,7 +257,7 @@ export default function CheckoutPage() {
                   style={{
                     fontSize: '10px',
                     letterSpacing: '0.1em',
-                    color: i === stepIndex ? '#141310' : '#9a9284',
+                    color: i === stepIndex ? '#F5F3EF' : '#6b6558',
                     fontWeight: i === stepIndex ? 600 : 400,
                   }}
                 >
@@ -267,7 +269,7 @@ export default function CheckoutPage() {
                   style={{
                     width: '80px',
                     height: '1px',
-                    background: i < stepIndex ? '#141310' : '#DAD4C8',
+                    background: i < stepIndex ? '#DAD4C8' : '#2a2826',
                     margin: '0 8px',
                     marginBottom: '20px',
                   }}
@@ -297,6 +299,7 @@ export default function CheckoutPage() {
                   fontSize: '28px',
                   fontWeight: 500,
                   marginBottom: '32px',
+                  color: '#F5F3EF',
                 }}
               >
                 Shipping Information
@@ -390,8 +393,8 @@ export default function CheckoutPage() {
                 style={{
                   width: '100%',
                   padding: '16px',
-                  background: '#141310',
-                  color: '#F5F3EF',
+                  background: '#DAD4C8',
+                  color: '#0d0c0a',
                   fontSize: '12px',
                   letterSpacing: '0.14em',
                   fontWeight: 500,
@@ -423,6 +426,7 @@ export default function CheckoutPage() {
                   fontSize: '28px',
                   fontWeight: 500,
                   marginBottom: '32px',
+                  color: '#F5F3EF',
                 }}
               >
                 Payment Details
@@ -483,11 +487,11 @@ export default function CheckoutPage() {
                   onClick={() => setStep('shipping')}
                   style={{
                     padding: '16px 24px',
-                    border: '1px solid #DAD4C8',
+                    border: '1px solid #2a2826',
                     background: 'transparent',
                     fontSize: '12px',
                     letterSpacing: '0.1em',
-                    color: '#141310',
+                    color: '#F5F3EF',
                     cursor: 'pointer',
                   }}
                 >
@@ -499,8 +503,8 @@ export default function CheckoutPage() {
                   style={{
                     flex: 1,
                     padding: '16px',
-                    background: '#141310',
-                    color: '#F5F3EF',
+                    background: '#DAD4C8',
+                    color: '#0d0c0a',
                     fontSize: '12px',
                     letterSpacing: '0.14em',
                     fontWeight: 500,
@@ -525,6 +529,7 @@ export default function CheckoutPage() {
                   fontSize: '28px',
                   fontWeight: 500,
                   marginBottom: '32px',
+                  color: '#F5F3EF',
                 }}
               >
                 Review Your Order
@@ -533,7 +538,8 @@ export default function CheckoutPage() {
               {/* Shipping summary */}
               <div
                 style={{
-                  background: '#EFEAE2',
+                  background: '#1a1916',
+                  border: '1px solid #2a2826',
                   padding: '20px 24px',
                   marginBottom: '16px',
                 }}
@@ -560,7 +566,7 @@ export default function CheckoutPage() {
                     onClick={() => setStep('shipping')}
                     style={{
                       fontSize: '11px',
-                      color: '#6b6558',
+                      color: '#9a9284',
                       textDecoration: 'underline',
                       cursor: 'pointer',
                     }}
@@ -568,11 +574,11 @@ export default function CheckoutPage() {
                     Edit
                   </button>
                 </div>
-                <p style={{ fontSize: '14px', fontWeight: 500 }}>
+                <p style={{ fontSize: '14px', fontWeight: 500, color: '#F5F3EF' }}>
                   {shipping.firstName} {shipping.lastName}
                 </p>
-                <p style={{ fontSize: '13px', color: '#6b6558' }}>{shipping.address}</p>
-                <p style={{ fontSize: '13px', color: '#6b6558' }}>
+                <p style={{ fontSize: '13px', color: '#9a9284' }}>{shipping.address}</p>
+                <p style={{ fontSize: '13px', color: '#9a9284' }}>
                   {shipping.city}, {shipping.state} {shipping.zip}
                 </p>
               </div>
@@ -580,7 +586,8 @@ export default function CheckoutPage() {
               {/* Payment summary */}
               <div
                 style={{
-                  background: '#EFEAE2',
+                  background: '#1a1916',
+                  border: '1px solid #2a2826',
                   padding: '20px 24px',
                   marginBottom: '32px',
                 }}
@@ -607,7 +614,7 @@ export default function CheckoutPage() {
                     onClick={() => setStep('payment')}
                     style={{
                       fontSize: '11px',
-                      color: '#6b6558',
+                      color: '#9a9284',
                       textDecoration: 'underline',
                       cursor: 'pointer',
                     }}
@@ -615,20 +622,20 @@ export default function CheckoutPage() {
                     Edit
                   </button>
                 </div>
-                <p style={{ fontSize: '14px', fontWeight: 500 }}>
+                <p style={{ fontSize: '14px', fontWeight: 500, color: '#F5F3EF' }}>
                   Card ending in {payment.cardNumber.replace(/\s/g, '').slice(-4)}
                 </p>
-                <p style={{ fontSize: '13px', color: '#6b6558' }}>Expires {payment.expiry}</p>
+                <p style={{ fontSize: '13px', color: '#9a9284' }}>Expires {payment.expiry}</p>
               </div>
 
               {error && (
                 <div
                   style={{
                     padding: '12px 16px',
-                    background: '#fee2e2',
-                    border: '1px solid #fca5a5',
+                    background: '#1a0808',
+                    border: '1px solid #3a1515',
                     fontSize: '13px',
-                    color: '#991b1b',
+                    color: '#f87171',
                     marginBottom: '20px',
                   }}
                 >
@@ -641,11 +648,11 @@ export default function CheckoutPage() {
                   onClick={() => setStep('payment')}
                   style={{
                     padding: '16px 24px',
-                    border: '1px solid #DAD4C8',
+                    border: '1px solid #2a2826',
                     background: 'transparent',
                     fontSize: '12px',
                     letterSpacing: '0.1em',
-                    color: '#141310',
+                    color: '#F5F3EF',
                     cursor: 'pointer',
                   }}
                 >
@@ -657,8 +664,8 @@ export default function CheckoutPage() {
                   style={{
                     flex: 1,
                     padding: '16px',
-                    background: '#141310',
-                    color: '#F5F3EF',
+                    background: '#DAD4C8',
+                    color: '#0d0c0a',
                     fontSize: '12px',
                     letterSpacing: '0.14em',
                     fontWeight: 500,
@@ -678,7 +685,8 @@ export default function CheckoutPage() {
         {/* ── RIGHT: Order Summary ── */}
         <div
           style={{
-            background: '#EFEAE2',
+            background: '#1a1916',
+            border: '1px solid #2a2826',
             padding: '28px',
             position: 'sticky',
             top: '80px',
@@ -690,13 +698,14 @@ export default function CheckoutPage() {
               fontSize: '22px',
               fontWeight: 500,
               marginBottom: '20px',
+              color: '#F5F3EF',
             }}
           >
             Order Summary
           </h3>
 
           {items.length === 0 ? (
-            <p style={{ fontSize: '13px', color: '#6b6558' }}>Your bag is empty.</p>
+            <p style={{ fontSize: '13px', color: '#9a9284' }}>Your bag is empty.</p>
           ) : (
             <>
               <div
@@ -718,7 +727,7 @@ export default function CheckoutPage() {
                       style={{
                         width: '56px',
                         height: '72px',
-                        background: '#DAD4C8',
+                        background: '#2a2826',
                         position: 'relative',
                         overflow: 'hidden',
                         flexShrink: 0,
@@ -742,6 +751,7 @@ export default function CheckoutPage() {
                           whiteSpace: 'nowrap',
                           overflow: 'hidden',
                           textOverflow: 'ellipsis',
+                          color: '#F5F3EF',
                         }}
                       >
                         {item.name}
@@ -749,7 +759,7 @@ export default function CheckoutPage() {
                       <p style={{ fontSize: '11px', color: '#6b6558', marginBottom: '2px' }}>
                         {item.size} &times; {item.quantity}
                       </p>
-                      <p style={{ fontSize: '13px', fontWeight: 500 }}>
+                      <p style={{ fontSize: '13px', fontWeight: 500, color: '#DAD4C8' }}>
                         ${(item.price * item.quantity).toLocaleString()}
                       </p>
                     </div>
@@ -757,7 +767,7 @@ export default function CheckoutPage() {
                 ))}
               </div>
 
-              <div style={{ borderTop: '1px solid #DAD4C8', paddingTop: '16px' }}>
+              <div style={{ borderTop: '1px solid #2a2826', paddingTop: '16px' }}>
                 <div
                   style={{
                     display: 'flex',
@@ -765,8 +775,8 @@ export default function CheckoutPage() {
                     marginBottom: '8px',
                   }}
                 >
-                  <span style={{ fontSize: '13px', color: '#6b6558' }}>Subtotal</span>
-                  <span style={{ fontSize: '13px' }}>${subtotal.toLocaleString()}</span>
+                  <span style={{ fontSize: '13px', color: '#9a9284' }}>Subtotal</span>
+                  <span style={{ fontSize: '13px', color: '#F5F3EF' }}>${subtotal.toLocaleString()}</span>
                 </div>
                 <div
                   style={{
@@ -775,19 +785,19 @@ export default function CheckoutPage() {
                     marginBottom: '16px',
                   }}
                 >
-                  <span style={{ fontSize: '13px', color: '#6b6558' }}>Shipping</span>
-                  <span style={{ fontSize: '13px', color: '#6b6558' }}>Free</span>
+                  <span style={{ fontSize: '13px', color: '#9a9284' }}>Shipping</span>
+                  <span style={{ fontSize: '13px', color: '#9a9284' }}>Free</span>
                 </div>
                 <div
                   style={{
-                    borderTop: '1px solid #DAD4C8',
+                    borderTop: '1px solid #2a2826',
                     paddingTop: '12px',
                     display: 'flex',
                     justifyContent: 'space-between',
                   }}
                 >
-                  <span style={{ fontSize: '15px', fontWeight: 600 }}>Total</span>
-                  <span style={{ fontSize: '15px', fontWeight: 600 }}>
+                  <span style={{ fontSize: '15px', fontWeight: 600, color: '#F5F3EF' }}>Total</span>
+                  <span style={{ fontSize: '15px', fontWeight: 600, color: '#DAD4C8' }}>
                     ${subtotal.toLocaleString()}
                   </span>
                 </div>

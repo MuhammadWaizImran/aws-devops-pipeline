@@ -48,10 +48,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {/* Footer */}
           <footer
             style={{
-              background: '#141310',
+              background: '#080706',
               color: '#F5F3EF',
               padding: '60px 24px 40px',
               marginTop: '80px',
+              borderTop: '1px solid #2a2826',
             }}
           >
             <div

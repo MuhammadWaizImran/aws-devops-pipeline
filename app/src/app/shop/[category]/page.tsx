@@ -41,16 +41,16 @@ export default async function CategoryPage({
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 24px' }}>
       {/* Breadcrumb */}
       <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '32px' }}>
-        <Link href="/" style={{ fontSize: '12px', color: '#9a9284', letterSpacing: '0.08em' }}>
+        <Link href="/" style={{ fontSize: '12px', color: '#6b6558', letterSpacing: '0.08em' }}>
           HOME
         </Link>
-        <span style={{ fontSize: '12px', color: '#c8c1b6' }}>/</span>
-        <Link href="/shop" style={{ fontSize: '12px', color: '#9a9284', letterSpacing: '0.08em' }}>
+        <span style={{ fontSize: '12px', color: '#2a2826' }}>/</span>
+        <Link href="/shop" style={{ fontSize: '12px', color: '#6b6558', letterSpacing: '0.08em' }}>
           SHOP
         </Link>
-        <span style={{ fontSize: '12px', color: '#c8c1b6' }}>/</span>
+        <span style={{ fontSize: '12px', color: '#2a2826' }}>/</span>
         <span
-          style={{ fontSize: '12px', color: '#141310', letterSpacing: '0.08em', fontWeight: 500 }}
+          style={{ fontSize: '12px', color: '#F5F3EF', letterSpacing: '0.08em', fontWeight: 500 }}
         >
           {title.toUpperCase()}
         </span>
@@ -58,7 +58,7 @@ export default async function CategoryPage({
 
       {/* Page header */}
       <div
-        style={{ marginBottom: '48px', borderBottom: '1px solid #DAD4C8', paddingBottom: '24px' }}
+        style={{ marginBottom: '48px', borderBottom: '1px solid #2a2826', paddingBottom: '24px' }}
       >
         <p
           style={{
@@ -76,6 +76,7 @@ export default async function CategoryPage({
             fontSize: '40px',
             fontWeight: 500,
             letterSpacing: '-0.01em',
+            color: '#F5F3EF',
           }}
         >
           {title}
@@ -107,16 +108,16 @@ export default async function CategoryPage({
                       href={l.href}
                       style={{
                         fontSize: '14px',
-                        color: isActive ? '#141310' : '#6b6558',
+                        color: isActive ? '#F5F3EF' : '#9a9284',
                         fontWeight: isActive ? 600 : 400,
                         display: 'block',
                         paddingBottom: '10px',
-                        borderBottom: '1px solid #DAD4C8',
+                        borderBottom: '1px solid #2a2826',
                       }}
                     >
                       {l.label}
                       <span
-                        style={{ float: 'right', fontSize: '12px', color: '#9a9284' }}
+                        style={{ float: 'right', fontSize: '12px', color: '#6b6558' }}
                       >
                         {l.href === '/shop'
                           ? PRODUCTS.length

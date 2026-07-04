@@ -19,7 +19,7 @@ export default function HomePage() {
           position: 'relative',
           height: '78vh',
           minHeight: '520px',
-          background: 'linear-gradient(160deg, #1e1c19 0%, #3a352e 60%, #2b2720 100%)',
+          background: 'linear-gradient(160deg, #0a0908 0%, #1a1612 60%, #111009 100%)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -32,7 +32,7 @@ export default function HomePage() {
             position: 'absolute',
             inset: 0,
             background:
-              'radial-gradient(ellipse at 30% 50%, rgba(218,212,200,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(107,101,88,0.08) 0%, transparent 50%)',
+              'radial-gradient(ellipse at 30% 50%, rgba(218,212,200,0.04) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(218,212,200,0.03) 0%, transparent 50%)',
           }}
         />
 
@@ -48,7 +48,7 @@ export default function HomePage() {
             style={{
               fontSize: '11px',
               letterSpacing: '0.2em',
-              color: '#9a9284',
+              color: '#6b6558',
               marginBottom: '20px',
               fontWeight: 500,
             }}
@@ -106,7 +106,7 @@ export default function HomePage() {
               <div
                 style={{
                   aspectRatio: '4/5',
-                  background: '#EFEAE2',
+                  background: '#1a1916',
                   display: 'flex',
                   alignItems: 'flex-end',
                   padding: '24px',
@@ -121,14 +121,14 @@ export default function HomePage() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    opacity: 0.15,
+                    opacity: 0.12,
                   }}
                 >
                   <div
                     style={{
                       width: '60%',
                       height: '70%',
-                      border: '1px solid #141310',
+                      border: '1px solid #DAD4C8',
                       borderRadius: '2px',
                     }}
                   />
@@ -149,7 +149,7 @@ export default function HomePage() {
                       fontFamily: "'Cormorant Garamond', serif",
                       fontSize: '28px',
                       fontWeight: 500,
-                      color: '#141310',
+                      color: '#F5F3EF',
                       lineHeight: 1.1,
                     }}
                   >
@@ -170,7 +170,7 @@ export default function HomePage() {
             justifyContent: 'space-between',
             alignItems: 'baseline',
             marginBottom: '40px',
-            borderBottom: '1px solid #DAD4C8',
+            borderBottom: '1px solid #2a2826',
             paddingBottom: '16px',
           }}
         >
@@ -180,6 +180,7 @@ export default function HomePage() {
               fontSize: '32px',
               fontWeight: 500,
               letterSpacing: '-0.01em',
+              color: '#F5F3EF',
             }}
           >
             New Arrivals
@@ -190,7 +191,7 @@ export default function HomePage() {
               fontSize: '11px',
               letterSpacing: '0.12em',
               fontWeight: 500,
-              color: '#6b6558',
+              color: '#9a9284',
               borderBottom: '1px solid #6b6558',
               paddingBottom: '1px',
             }}
@@ -216,7 +217,7 @@ export default function HomePage() {
               <div
                 style={{
                   aspectRatio: '3/4',
-                  background: '#EFEAE2',
+                  background: '#1a1916',
                   marginBottom: '16px',
                   overflow: 'hidden',
                   position: 'relative',
@@ -243,7 +244,7 @@ export default function HomePage() {
                       style={{
                         width: '40%',
                         height: '50%',
-                        border: '1px solid #c8c1b6',
+                        border: '1px solid #2a2826',
                         borderRadius: '2px',
                         opacity: 0.5,
                       }}
@@ -262,10 +263,10 @@ export default function HomePage() {
               >
                 {product.category.toUpperCase()}
               </p>
-              <p style={{ fontSize: '14px', fontWeight: 500, marginBottom: '4px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 500, marginBottom: '4px', color: '#F5F3EF' }}>
                 {product.name}
               </p>
-              <p style={{ fontSize: '14px', color: '#6b6558' }}>${product.price}</p>
+              <p style={{ fontSize: '14px', color: '#9a9284' }}>${product.price}</p>
             </Link>
           ))}
         </div>
@@ -274,9 +275,11 @@ export default function HomePage() {
       {/* EDITORIAL BANNER */}
       <section
         style={{
-          background: '#141310',
+          background: '#111009',
           padding: '100px 24px',
           textAlign: 'center',
+          borderTop: '1px solid #2a2826',
+          borderBottom: '1px solid #2a2826',
         }}
       >
         <blockquote

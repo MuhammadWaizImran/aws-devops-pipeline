@@ -33,11 +33,12 @@ export default function CartPage() {
             fontSize: '36px',
             fontWeight: 500,
             marginBottom: '12px',
+            color: '#F5F3EF',
           }}
         >
           Your bag is empty
         </h1>
-        <p style={{ color: '#6b6558', fontSize: '14px', marginBottom: '40px' }}>
+        <p style={{ color: '#9a9284', fontSize: '14px', marginBottom: '40px' }}>
           Discover our collection and add pieces you love.
         </p>
         <Link
@@ -45,8 +46,8 @@ export default function CartPage() {
           style={{
             display: 'inline-block',
             padding: '14px 40px',
-            background: '#141310',
-            color: '#F5F3EF',
+            background: '#DAD4C8',
+            color: '#0d0c0a',
             fontSize: '12px',
             letterSpacing: '0.14em',
             fontWeight: 500,
@@ -60,7 +61,7 @@ export default function CartPage() {
 
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 24px' }}>
-      <div style={{ marginBottom: '40px', borderBottom: '1px solid #DAD4C8', paddingBottom: '20px' }}>
+      <div style={{ marginBottom: '40px', borderBottom: '1px solid #2a2826', paddingBottom: '20px' }}>
         <p
           style={{
             fontSize: '11px',
@@ -76,6 +77,7 @@ export default function CartPage() {
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: '36px',
             fontWeight: 500,
+            color: '#F5F3EF',
           }}
         >
           Shopping Bag
@@ -101,14 +103,14 @@ export default function CartPage() {
                 gap: '20px',
                 paddingBottom: '28px',
                 marginBottom: '28px',
-                borderBottom: idx < items.length - 1 ? '1px solid #DAD4C8' : 'none',
+                borderBottom: idx < items.length - 1 ? '1px solid #2a2826' : 'none',
               }}
             >
               {/* Image */}
               <div
                 style={{
                   aspectRatio: '3/4',
-                  background: '#EFEAE2',
+                  background: '#1a1916',
                   position: 'relative',
                   overflow: 'hidden',
                 }}
@@ -129,7 +131,7 @@ export default function CartPage() {
                       style={{
                         width: '40%',
                         height: '50%',
-                        border: '1px solid #c8c1b6',
+                        border: '1px solid #2a2826',
                         opacity: 0.5,
                       }}
                     />
@@ -149,18 +151,18 @@ export default function CartPage() {
                     }}
                   >
                     <div>
-                      <p style={{ fontSize: '15px', fontWeight: 500, marginBottom: '4px' }}>
+                      <p style={{ fontSize: '15px', fontWeight: 500, marginBottom: '4px', color: '#F5F3EF' }}>
                         {item.name}
                       </p>
                       <p style={{ fontSize: '12px', color: '#6b6558', letterSpacing: '0.06em' }}>
                         Size: {item.size}
                       </p>
                     </div>
-                    <p style={{ fontSize: '15px', fontWeight: 500 }}>
+                    <p style={{ fontSize: '15px', fontWeight: 500, color: '#DAD4C8' }}>
                       ${(item.price * item.quantity).toLocaleString()}
                     </p>
                   </div>
-                  <p style={{ fontSize: '13px', color: '#6b6558' }}>${item.price} each</p>
+                  <p style={{ fontSize: '13px', color: '#9a9284' }}>${item.price} each</p>
                 </div>
 
                 <div
@@ -176,7 +178,7 @@ export default function CartPage() {
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
-                      border: '1px solid #DAD4C8',
+                      border: '1px solid #2a2826',
                     }}
                   >
                     <button
@@ -190,7 +192,7 @@ export default function CartPage() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         fontSize: '16px',
-                        color: '#141310',
+                        color: '#F5F3EF',
                         cursor: 'pointer',
                       }}
                     >
@@ -202,6 +204,7 @@ export default function CartPage() {
                         textAlign: 'center',
                         fontSize: '13px',
                         fontWeight: 500,
+                        color: '#F5F3EF',
                       }}
                     >
                       {item.quantity}
@@ -215,7 +218,7 @@ export default function CartPage() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         fontSize: '16px',
-                        color: '#141310',
+                        color: '#F5F3EF',
                         cursor: 'pointer',
                       }}
                     >
@@ -229,7 +232,7 @@ export default function CartPage() {
                     style={{
                       fontSize: '12px',
                       letterSpacing: '0.08em',
-                      color: '#9a9284',
+                      color: '#6b6558',
                       textDecoration: 'underline',
                       cursor: 'pointer',
                     }}
@@ -245,10 +248,11 @@ export default function CartPage() {
         {/* Order Summary */}
         <div
           style={{
-            background: '#EFEAE2',
+            background: '#1a1916',
             padding: '32px',
             position: 'sticky',
             top: '80px',
+            border: '1px solid #2a2826',
           }}
         >
           <h2
@@ -257,6 +261,7 @@ export default function CartPage() {
               fontSize: '24px',
               fontWeight: 500,
               marginBottom: '24px',
+              color: '#F5F3EF',
             }}
           >
             Order Summary
@@ -271,27 +276,27 @@ export default function CartPage() {
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ fontSize: '13px', color: '#6b6558' }}>Subtotal</span>
-              <span style={{ fontSize: '13px', fontWeight: 500 }}>
+              <span style={{ fontSize: '13px', color: '#9a9284' }}>Subtotal</span>
+              <span style={{ fontSize: '13px', fontWeight: 500, color: '#F5F3EF' }}>
                 ${subtotal.toLocaleString()}
               </span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ fontSize: '13px', color: '#6b6558' }}>Shipping</span>
-              <span style={{ fontSize: '13px', color: '#6b6558' }}>Free</span>
+              <span style={{ fontSize: '13px', color: '#9a9284' }}>Shipping</span>
+              <span style={{ fontSize: '13px', color: '#9a9284' }}>Free</span>
             </div>
           </div>
 
           <div
             style={{
-              borderTop: '1px solid #DAD4C8',
+              borderTop: '1px solid #2a2826',
               paddingTop: '16px',
               marginBottom: '28px',
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ fontSize: '15px', fontWeight: 600 }}>Total</span>
-              <span style={{ fontSize: '15px', fontWeight: 600 }}>
+              <span style={{ fontSize: '15px', fontWeight: 600, color: '#F5F3EF' }}>Total</span>
+              <span style={{ fontSize: '15px', fontWeight: 600, color: '#DAD4C8' }}>
                 ${subtotal.toLocaleString()}
               </span>
             </div>
@@ -303,8 +308,8 @@ export default function CartPage() {
               display: 'block',
               width: '100%',
               padding: '16px',
-              background: '#141310',
-              color: '#F5F3EF',
+              background: '#DAD4C8',
+              color: '#0d0c0a',
               fontSize: '12px',
               letterSpacing: '0.14em',
               fontWeight: 500,

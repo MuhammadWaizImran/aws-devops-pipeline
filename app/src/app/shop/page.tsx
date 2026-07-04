@@ -13,7 +13,7 @@ export default function ShopPage() {
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 24px' }}>
       {/* Page header */}
-      <div style={{ marginBottom: '48px', borderBottom: '1px solid #DAD4C8', paddingBottom: '24px' }}>
+      <div style={{ marginBottom: '48px', borderBottom: '1px solid #2a2826', paddingBottom: '24px' }}>
         <p
           style={{
             fontSize: '11px',
@@ -30,6 +30,7 @@ export default function ShopPage() {
             fontSize: '40px',
             fontWeight: 500,
             letterSpacing: '-0.01em',
+            color: '#F5F3EF',
           }}
         >
           New Arrivals
@@ -63,15 +64,15 @@ export default function ShopPage() {
                     href={l.href}
                     style={{
                       fontSize: '14px',
-                      color: l.href === '/shop' ? '#141310' : '#6b6558',
+                      color: l.href === '/shop' ? '#F5F3EF' : '#9a9284',
                       fontWeight: l.href === '/shop' ? 600 : 400,
                       display: 'block',
                       paddingBottom: '10px',
-                      borderBottom: '1px solid #DAD4C8',
+                      borderBottom: '1px solid #2a2826',
                     }}
                   >
                     {l.label}
-                    <span style={{ float: 'right', fontSize: '12px', color: '#9a9284' }}>
+                    <span style={{ float: 'right', fontSize: '12px', color: '#6b6558' }}>
                       {l.href === '/shop'
                         ? PRODUCTS.length
                         : PRODUCTS.filter((p) => p.category === l.href.split('/').pop()).length}

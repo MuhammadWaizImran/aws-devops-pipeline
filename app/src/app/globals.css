@@ -16,8 +16,8 @@ html {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  background: #F5F3EF;
-  color: #141310;
+  background: #0d0c0a;
+  color: #F5F3EF;
   line-height: 1.6;
 }
 
@@ -64,10 +64,10 @@ textarea {
 .nav-link {
   font-size: 13px;
   letter-spacing: 0.08em;
-  color: #141310;
+  color: #F5F3EF;
   transition: color 0.2s;
 }
 
 .nav-link:hover {
-  color: #6b6558;
+  color: #9a9284;
 }

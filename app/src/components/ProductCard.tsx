@@ -9,7 +9,7 @@ export default function ProductCard({ product }: { product: Product }) {
       <div
         style={{
           aspectRatio: '3/4',
-          background: '#EFEAE2',
+          background: '#1a1916',
           marginBottom: '16px',
           overflow: 'hidden',
           position: 'relative',
@@ -36,7 +36,7 @@ export default function ProductCard({ product }: { product: Product }) {
               style={{
                 width: '40%',
                 height: '50%',
-                border: '1px solid #c8c1b6',
+                border: '1px solid #2a2826',
                 borderRadius: '2px',
                 opacity: 0.5,
               }}
@@ -62,12 +62,12 @@ export default function ProductCard({ product }: { product: Product }) {
           fontSize: '14px',
           fontWeight: 500,
           marginBottom: '4px',
-          color: '#141310',
+          color: '#F5F3EF',
         }}
       >
         {product.name}
       </p>
-      <p style={{ fontSize: '14px', color: '#6b6558' }}>${product.price}</p>
+      <p style={{ fontSize: '14px', color: '#9a9284' }}>${product.price}</p>
     </Link>
   )
 }

@@ -39,11 +39,12 @@ export default function ProductPage() {
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: '36px',
             marginBottom: '16px',
+            color: '#F5F3EF',
           }}
         >
           Product not found
         </h1>
-        <Link href="/shop" style={{ fontSize: '13px', color: '#6b6558', letterSpacing: '0.1em' }}>
+        <Link href="/shop" style={{ fontSize: '13px', color: '#9a9284', letterSpacing: '0.1em' }}>
           CONTINUE SHOPPING
         </Link>
       </div>
@@ -75,21 +76,21 @@ export default function ProductPage() {
           marginBottom: '40px',
         }}
       >
-        <Link href="/" style={{ fontSize: '12px', color: '#9a9284', letterSpacing: '0.08em' }}>
+        <Link href="/" style={{ fontSize: '12px', color: '#6b6558', letterSpacing: '0.08em' }}>
           HOME
         </Link>
-        <span style={{ fontSize: '12px', color: '#c8c1b6' }}>/</span>
+        <span style={{ fontSize: '12px', color: '#2a2826' }}>/</span>
         <Link
           href={`/shop/${product.category}`}
-          style={{ fontSize: '12px', color: '#9a9284', letterSpacing: '0.08em' }}
+          style={{ fontSize: '12px', color: '#6b6558', letterSpacing: '0.08em' }}
         >
           {product.category.toUpperCase()}
         </Link>
-        <span style={{ fontSize: '12px', color: '#c8c1b6' }}>/</span>
+        <span style={{ fontSize: '12px', color: '#2a2826' }}>/</span>
         <span
           style={{
             fontSize: '12px',
-            color: '#141310',
+            color: '#F5F3EF',
             letterSpacing: '0.08em',
             fontWeight: 500,
           }}
@@ -112,7 +113,7 @@ export default function ProductPage() {
           <div
             style={{
               aspectRatio: '3/4',
-              background: '#EFEAE2',
+              background: '#1a1916',
               overflow: 'hidden',
               position: 'relative',
               marginBottom: '12px',
@@ -140,7 +141,7 @@ export default function ProductPage() {
                   style={{
                     width: '40%',
                     height: '50%',
-                    border: '1px solid #c8c1b6',
+                    border: '1px solid #2a2826',
                     borderRadius: '2px',
                     opacity: 0.5,
                   }}
@@ -156,10 +157,10 @@ export default function ProductPage() {
                 style={{
                   width: '72px',
                   height: '90px',
-                  background: '#EFEAE2',
+                  background: '#1a1916',
                   overflow: 'hidden',
                   position: 'relative',
-                  border: '1px solid #141310',
+                  border: '1px solid #DAD4C8',
                 }}
               >
                 <Image
@@ -197,7 +198,7 @@ export default function ProductPage() {
               lineHeight: 1.15,
               letterSpacing: '-0.01em',
               marginBottom: '16px',
-              color: '#141310',
+              color: '#F5F3EF',
             }}
           >
             {product.name}
@@ -208,7 +209,7 @@ export default function ProductPage() {
             style={{
               fontSize: '20px',
               fontWeight: 500,
-              color: '#141310',
+              color: '#DAD4C8',
               marginBottom: '32px',
             }}
           >
@@ -216,7 +217,7 @@ export default function ProductPage() {
           </p>
 
           {/* Divider */}
-          <div style={{ borderTop: '1px solid #DAD4C8', marginBottom: '28px' }} />
+          <div style={{ borderTop: '1px solid #2a2826', marginBottom: '28px' }} />
 
           {/* SIZE */}
           <div style={{ marginBottom: '28px' }}>
@@ -232,7 +233,7 @@ export default function ProductPage() {
                   fontSize: '11px',
                   letterSpacing: '0.12em',
                   fontWeight: 600,
-                  color: '#141310',
+                  color: '#F5F3EF',
                 }}
               >
                 SIZE
@@ -256,9 +257,9 @@ export default function ProductPage() {
                   style={{
                     padding: '8px 16px',
                     border: '1px solid',
-                    borderColor: selectedSize === size ? '#141310' : '#DAD4C8',
-                    background: selectedSize === size ? '#141310' : 'transparent',
-                    color: selectedSize === size ? '#F5F3EF' : '#141310',
+                    borderColor: selectedSize === size ? '#DAD4C8' : '#2a2826',
+                    background: selectedSize === size ? '#DAD4C8' : 'transparent',
+                    color: selectedSize === size ? '#0d0c0a' : '#9a9284',
                     fontSize: '12px',
                     letterSpacing: '0.06em',
                     cursor: 'pointer',
@@ -279,7 +280,7 @@ export default function ProductPage() {
                 fontSize: '11px',
                 letterSpacing: '0.12em',
                 fontWeight: 600,
-                color: '#141310',
+                color: '#F5F3EF',
                 marginBottom: '12px',
               }}
             >
@@ -289,7 +290,7 @@ export default function ProductPage() {
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                border: '1px solid #DAD4C8',
+                border: '1px solid #2a2826',
               }}
             >
               <button
@@ -301,7 +302,7 @@ export default function ProductPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: '18px',
-                  color: '#141310',
+                  color: '#F5F3EF',
                   cursor: 'pointer',
                 }}
               >
@@ -313,6 +314,7 @@ export default function ProductPage() {
                   textAlign: 'center',
                   fontSize: '14px',
                   fontWeight: 500,
+                  color: '#F5F3EF',
                 }}
               >
                 {qty}
@@ -326,7 +328,7 @@ export default function ProductPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: '18px',
-                  color: '#141310',
+                  color: '#F5F3EF',
                   cursor: 'pointer',
                 }}
               >
@@ -342,8 +344,8 @@ export default function ProductPage() {
             style={{
               width: '100%',
               padding: '16px',
-              background: '#141310',
-              color: '#F5F3EF',
+              background: '#DAD4C8',
+              color: '#0d0c0a',
               fontSize: '12px',
               letterSpacing: '0.14em',
               fontWeight: 500,
@@ -358,7 +360,7 @@ export default function ProductPage() {
           </button>
 
           {/* DESCRIPTION accordion */}
-          <div style={{ borderTop: '1px solid #DAD4C8' }}>
+          <div style={{ borderTop: '1px solid #2a2826' }}>
             <button
               onClick={() => setDescOpen((o) => !o)}
               style={{
@@ -370,7 +372,7 @@ export default function ProductPage() {
                 fontSize: '12px',
                 letterSpacing: '0.12em',
                 fontWeight: 600,
-                color: '#141310',
+                color: '#F5F3EF',
                 cursor: 'pointer',
               }}
             >
@@ -383,7 +385,7 @@ export default function ProductPage() {
               <p
                 style={{
                   fontSize: '14px',
-                  color: '#6b6558',
+                  color: '#9a9284',
                   lineHeight: 1.7,
                   paddingBottom: '20px',
                 }}
@@ -391,11 +393,11 @@ export default function ProductPage() {
                 {product.description}
               </p>
             )}
-            <div style={{ borderTop: '1px solid #DAD4C8' }} />
+            <div style={{ borderTop: '1px solid #2a2826' }} />
           </div>
 
           {/* Care */}
-          <div style={{ borderBottom: '1px solid #DAD4C8' }}>
+          <div style={{ borderBottom: '1px solid #2a2826' }}>
             <button
               style={{
                 width: '100%',
@@ -406,7 +408,7 @@ export default function ProductPage() {
                 fontSize: '12px',
                 letterSpacing: '0.12em',
                 fontWeight: 600,
-                color: '#141310',
+                color: '#F5F3EF',
                 cursor: 'pointer',
               }}
             >
@@ -424,13 +426,13 @@ export default function ProductPage() {
             position: 'fixed',
             bottom: '32px',
             right: '32px',
-            background: '#141310',
-            color: '#F5F3EF',
+            background: '#DAD4C8',
+            color: '#0d0c0a',
             padding: '14px 24px',
             fontSize: '13px',
             letterSpacing: '0.06em',
             zIndex: 100,
-            boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.4)',
             animation: 'fadeIn 0.2s ease',
           }}
         >

@@ -12,8 +12,8 @@ export default function SiteHeader() {
         position: 'sticky',
         top: 0,
         zIndex: 50,
-        background: '#F5F3EF',
-        borderBottom: '1px solid #DAD4C8',
+        background: '#0d0c0a',
+        borderBottom: '1px solid #2a2826',
       }}
     >
       <div
@@ -35,7 +35,7 @@ export default function SiteHeader() {
             fontSize: '20px',
             fontWeight: 600,
             letterSpacing: '0.14em',
-            color: '#141310',
+            color: '#F5F3EF',
           }}
         >
           PRIME BAZAAR
@@ -66,7 +66,7 @@ export default function SiteHeader() {
             gap: '6px',
             fontSize: '13px',
             letterSpacing: '0.08em',
-            color: '#141310',
+            color: '#F5F3EF',
             fontWeight: 500,
           }}
         >
@@ -80,8 +80,8 @@ export default function SiteHeader() {
                 width: '18px',
                 height: '18px',
                 borderRadius: '50%',
-                background: '#141310',
-                color: '#F5F3EF',
+                background: '#DAD4C8',
+                color: '#0d0c0a',
                 fontSize: '10px',
                 fontWeight: 600,
               }}
