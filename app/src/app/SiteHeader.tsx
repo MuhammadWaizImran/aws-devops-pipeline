@@ -12,8 +12,8 @@ export default function SiteHeader() {
         position: 'sticky',
         top: 0,
         zIndex: 50,
-        background: '#0d0c0a',
-        borderBottom: '1px solid #2a2826',
+        background: '#141310',
+        borderBottom: '1px solid #2b2820',
       }}
     >
       <div
@@ -80,8 +80,8 @@ export default function SiteHeader() {
                 width: '18px',
                 height: '18px',
                 borderRadius: '50%',
-                background: '#DAD4C8',
-                color: '#0d0c0a',
+                background: '#F5F3EF',
+                color: '#141310',
                 fontSize: '10px',
                 fontWeight: 600,
               }}

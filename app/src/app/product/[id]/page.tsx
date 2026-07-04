@@ -13,7 +13,8 @@ const ACCORDION_DEFS: { key: AccordionKey; title: string; body: (desc: string) =
   {
     key: 'description',
     title: 'DESCRIPTION',
-    body: (desc) => desc || 'Crafted from premium materials with meticulous attention to detail. Designed to be worn season after season.',
+    body: (desc) =>
+      desc || 'Crafted from premium materials with meticulous attention to detail. Designed to be worn season after season.',
   },
   {
     key: 'shipping',
@@ -26,6 +27,9 @@ const ACCORDION_DEFS: { key: AccordionKey; title: string; body: (desc: string) =
     body: () => 'Made from responsibly sourced materials. Dry clean only. Store folded to preserve shape.',
   },
 ]
+
+const PLACEHOLDER =
+  'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 8px,#D9D3C8 8px,#D9D3C8 16px)'
 
 export default function ProductPage() {
   const params = useParams()
@@ -41,52 +45,28 @@ export default function ProductPage() {
   const [activeThumb, setActiveThumb] = useState(0)
 
   useEffect(() => {
-    if (product?.sizes?.length) {
-      setSelectedSize(product.sizes[0])
-    }
+    if (product?.sizes?.length) setSelectedSize(product.sizes[0])
   }, [product])
 
   if (!product) {
     return (
-      <div
-        style={{
-          maxWidth: '1200px',
-          margin: '80px auto',
-          padding: '0 24px',
-          textAlign: 'center',
-        }}
-      >
-        <h1
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: '36px',
-            marginBottom: '16px',
-            color: '#F5F3EF',
-          }}
-        >
+      <div style={{ maxWidth: '1200px', margin: '80px auto', padding: '0 24px', textAlign: 'center' }}>
+        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '36px', marginBottom: '16px', color: '#141310' }}>
           Product not found
         </h1>
-        <Link href="/shop" style={{ fontSize: '13px', color: '#9a9284', letterSpacing: '0.1em' }}>
+        <Link href="/shop" style={{ fontSize: '13px', color: '#6b6558', letterSpacing: '0.1em' }}>
           CONTINUE SHOPPING
         </Link>
       </div>
     )
   }
 
-  const toggleAccordion = (key: AccordionKey) => {
+  const toggleAccordion = (key: AccordionKey) =>
     setOpenAccordion((prev) => (prev === key ? 'description' : key))
-  }
 
   const handleAddToBag = () => {
     if (!selectedSize) return
-    addItem({
-      productId: product.id,
-      name: product.name,
-      price: product.price,
-      size: selectedSize,
-      quantity: qty,
-      image: product.image,
-    })
+    addItem({ productId: product.id, name: product.name, price: product.price, size: selectedSize, quantity: qty, image: product.image })
     setToastMessage(`${product.name} added to bag`)
     setShowToast(true)
     setTimeout(() => setShowToast(false), 2200)
@@ -94,40 +74,20 @@ export default function ProductPage() {
 
   return (
     <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '48px' }}>
-      {/* Breadcrumb */}
-      <div
-        style={{
-          fontSize: '12px',
-          letterSpacing: '0.06em',
-          color: '#6b6558',
-          marginBottom: '32px',
-          cursor: 'pointer',
-        }}
+      {/* Back link */}
+      <Link
+        href={`/shop/${product.category}`}
+        style={{ fontSize: '12px', letterSpacing: '0.06em', color: '#6b6558', display: 'inline-block', marginBottom: '32px' }}
       >
-        <Link href={`/shop/${product.category}`} style={{ color: '#6b6558' }}>
-          ← BACK TO {product.category.toUpperCase()}
-        </Link>
-      </div>
+        ← BACK TO {product.category.toUpperCase()}
+      </Link>
 
-      {/* Main layout: gallery + details */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '64px',
-          alignItems: 'start',
-        }}
-      >
+      {/* Main layout */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'start' }}>
+
         {/* ── LEFT: Thumbnail sidebar + main image ── */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '88px 1fr',
-            gap: '16px',
-            minWidth: 0,
-          }}
-        >
-          {/* Thumbnail column */}
+        <div style={{ display: 'grid', gridTemplateColumns: '88px 1fr', gap: '16px', minWidth: 0 }}>
+          {/* Thumbnails */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {[0, 1, 2, 3].map((i) => (
               <div
@@ -137,19 +97,14 @@ export default function ProductPage() {
                   position: 'relative',
                   aspectRatio: '3/4',
                   overflow: 'hidden',
-                  background: '#1a1916',
+                  background: PLACEHOLDER,
                   cursor: 'pointer',
-                  border: `1px solid ${activeThumb === i ? '#DAD4C8' : 'transparent'}`,
+                  border: `1px solid ${activeThumb === i ? '#141310' : 'transparent'}`,
                   transition: 'border-color 0.2s',
                 }}
               >
                 {product.image && (
-                  <Image
-                    src={product.image}
-                    alt={`${product.name} view ${i + 1}`}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
+                  <Image src={product.image} alt={`${product.name} view ${i + 1}`} fill style={{ objectFit: 'cover' }} />
                 )}
               </div>
             ))}
@@ -158,104 +113,38 @@ export default function ProductPage() {
           {/* Main image */}
           <div
             className="product-link"
-            style={{
-              position: 'relative',
-              aspectRatio: '3/4',
-              minWidth: 0,
-              overflow: 'hidden',
-              background: '#1a1916',
-            }}
+            style={{ position: 'relative', aspectRatio: '3/4', minWidth: 0, overflow: 'hidden', background: PLACEHOLDER }}
           >
-            {product.image ? (
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                style={{ objectFit: 'cover' }}
-                priority
-              />
-            ) : (
-              <div
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <div
-                  style={{
-                    width: '40%',
-                    height: '50%',
-                    border: '1px solid #2a2826',
-                    opacity: 0.5,
-                  }}
-                />
-              </div>
+            {product.image && (
+              <Image src={product.image} alt={product.name} fill style={{ objectFit: 'cover' }} priority />
             )}
           </div>
         </div>
 
-        {/* ── RIGHT: Product details ── */}
+        {/* ── RIGHT: Details ── */}
         <div style={{ maxWidth: '420px', minWidth: 0 }}>
-          {/* Category */}
-          <p
-            style={{
-              fontSize: '13px',
-              letterSpacing: '0.08em',
-              color: '#6b6558',
-              marginBottom: '10px',
-            }}
-          >
+          <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#6b6558', marginBottom: '10px' }}>
             {product.category.toUpperCase()}
           </p>
-
-          {/* Name */}
           <h1
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 500,
               fontSize: '38px',
               lineHeight: 1.15,
-              color: '#F5F3EF',
+              color: '#141310',
               margin: '0 0 14px',
             }}
           >
             {product.name}
           </h1>
-
-          {/* Price */}
-          <p style={{ fontSize: '20px', color: '#DAD4C8', marginBottom: '28px' }}>
-            ${product.price}
-          </p>
+          <p style={{ fontSize: '20px', color: '#141310', marginBottom: '28px' }}>${product.price}</p>
 
           {/* SIZE */}
           <div style={{ marginBottom: '28px' }}>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                marginBottom: '12px',
-              }}
-            >
-              <p
-                style={{
-                  fontSize: '13px',
-                  letterSpacing: '0.08em',
-                  color: '#F5F3EF',
-                }}
-              >
-                SIZE
-              </p>
-              <button
-                style={{
-                  fontSize: '11px',
-                  letterSpacing: '0.08em',
-                  color: '#6b6558',
-                  textDecoration: 'underline',
-                }}
-              >
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+              <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#141310' }}>SIZE</p>
+              <button style={{ fontSize: '11px', letterSpacing: '0.08em', color: '#6b6558', textDecoration: 'underline' }}>
                 SIZE GUIDE
               </button>
             </div>
@@ -270,9 +159,9 @@ export default function ProductPage() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    border: `1px solid ${selectedSize === size ? '#DAD4C8' : '#2a2826'}`,
-                    background: selectedSize === size ? '#DAD4C8' : 'transparent',
-                    color: selectedSize === size ? '#0d0c0a' : '#9a9284',
+                    border: `1px solid ${selectedSize === size ? '#141310' : '#DAD4C8'}`,
+                    background: selectedSize === size ? '#141310' : 'transparent',
+                    color: selectedSize === size ? '#F5F3EF' : '#141310',
                     fontSize: '13px',
                     cursor: 'pointer',
                     transition: 'all 0.2s',
@@ -286,56 +175,13 @@ export default function ProductPage() {
 
           {/* QUANTITY */}
           <div style={{ marginBottom: '32px' }}>
-            <p
-              style={{
-                fontSize: '13px',
-                letterSpacing: '0.08em',
-                color: '#F5F3EF',
-                marginBottom: '12px',
-              }}
-            >
-              QUANTITY
-            </p>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                border: '1px solid #2a2826',
-                width: '120px',
-              }}
-            >
-              <button
-                onClick={() => setQty((q) => Math.max(1, q - 1))}
-                style={{
-                  flex: 1,
-                  padding: '10px',
-                  fontSize: '16px',
-                  color: '#F5F3EF',
-                  cursor: 'pointer',
-                }}
-              >
+            <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#141310', marginBottom: '12px' }}>QUANTITY</p>
+            <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #DAD4C8', width: '120px' }}>
+              <button onClick={() => setQty((q) => Math.max(1, q - 1))} style={{ flex: 1, padding: '10px', fontSize: '16px', cursor: 'pointer', color: '#141310' }}>
                 &minus;
               </button>
-              <span
-                style={{
-                  flex: 1,
-                  textAlign: 'center',
-                  fontSize: '14px',
-                  color: '#F5F3EF',
-                }}
-              >
-                {qty}
-              </span>
-              <button
-                onClick={() => setQty((q) => Math.min(9, q + 1))}
-                style={{
-                  flex: 1,
-                  padding: '10px',
-                  fontSize: '16px',
-                  color: '#F5F3EF',
-                  cursor: 'pointer',
-                }}
-              >
+              <span style={{ flex: 1, textAlign: 'center', fontSize: '14px', color: '#141310' }}>{qty}</span>
+              <button onClick={() => setQty((q) => Math.min(9, q + 1))} style={{ flex: 1, padding: '10px', fontSize: '16px', cursor: 'pointer', color: '#141310' }}>
                 &#43;
               </button>
             </div>
@@ -347,8 +193,8 @@ export default function ProductPage() {
             disabled={!selectedSize}
             style={{
               width: '100%',
-              background: '#DAD4C8',
-              color: '#0d0c0a',
+              background: '#141310',
+              color: '#F5F3EF',
               border: 'none',
               padding: '18px',
               fontSize: '13px',
@@ -356,27 +202,20 @@ export default function ProductPage() {
               fontWeight: 500,
               cursor: selectedSize ? 'pointer' : 'not-allowed',
               marginBottom: '12px',
-              opacity: selectedSize ? 1 : 0.45,
+              opacity: selectedSize ? 1 : 0.4,
               transition: 'opacity 0.2s',
             }}
           >
             {selectedSize ? 'ADD TO BAG' : 'SELECT A SIZE TO CONTINUE'}
           </button>
-          <p
-            style={{
-              fontSize: '12px',
-              color: '#6b6558',
-              textAlign: 'center',
-              marginBottom: '32px',
-            }}
-          >
+          <p style={{ fontSize: '12px', color: '#6b6558', textAlign: 'center', marginBottom: '32px' }}>
             Free shipping &amp; returns
           </p>
 
-          {/* ── ACCORDIONS ── */}
-          <div style={{ borderTop: '1px solid #2a2826' }}>
+          {/* ACCORDIONS */}
+          <div style={{ borderTop: '1px solid #DAD4C8' }}>
             {ACCORDION_DEFS.map(({ key, title, body }) => (
-              <div key={key} style={{ borderBottom: '1px solid #2a2826' }}>
+              <div key={key} style={{ borderBottom: '1px solid #DAD4C8' }}>
                 <button
                   onClick={() => toggleAccordion(key)}
                   style={{
@@ -387,7 +226,7 @@ export default function ProductPage() {
                     padding: '18px 0',
                     fontSize: '13px',
                     letterSpacing: '0.06em',
-                    color: '#F5F3EF',
+                    color: '#141310',
                     cursor: 'pointer',
                   }}
                 >
@@ -397,14 +236,7 @@ export default function ProductPage() {
                   </span>
                 </button>
                 {openAccordion === key && (
-                  <p
-                    style={{
-                      paddingBottom: '18px',
-                      fontSize: '13px',
-                      lineHeight: 1.7,
-                      color: '#9a9284',
-                    }}
-                  >
+                  <p style={{ paddingBottom: '18px', fontSize: '13px', lineHeight: 1.7, color: '#4a463d', animation: 'fadeUp 0.35s ease both' }}>
                     {body(product.description)}
                   </p>
                 )}
@@ -414,21 +246,21 @@ export default function ProductPage() {
         </div>
       </div>
 
-      {/* ── TOAST ── */}
+      {/* TOAST */}
       {showToast && (
         <div
           style={{
             position: 'fixed',
             bottom: '32px',
             right: '32px',
-            background: '#DAD4C8',
-            color: '#0d0c0a',
+            background: '#141310',
+            color: '#F5F3EF',
             padding: '16px 24px',
             fontSize: '13px',
             letterSpacing: '0.04em',
             zIndex: 100,
             animation: 'toastIn 0.25s ease',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.4)',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
           }}
         >
           {toastMessage}

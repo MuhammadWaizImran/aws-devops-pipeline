@@ -3,7 +3,7 @@ import { PRODUCTS } from '@/lib/products'
 import SortableProductGrid from '@/components/SortableProductGrid'
 
 const categoryLinks = [
-  { label: 'All', href: '/shop' },
+  { label: 'All Products', href: '/shop' },
   { label: 'Women', href: '/shop/women' },
   { label: 'Men', href: '/shop/men' },
   { label: 'Accessories', href: '/shop/accessories' },
@@ -11,72 +11,52 @@ const categoryLinks = [
 
 export default function ShopPage() {
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 24px' }}>
-      {/* Page header */}
-      <div style={{ marginBottom: '48px', borderBottom: '1px solid #2a2826', paddingBottom: '24px' }}>
-        <p
-          style={{
-            fontSize: '11px',
-            letterSpacing: '0.14em',
-            color: '#6b6558',
-            marginBottom: '8px',
-          }}
-        >
-          COLLECTION
-        </p>
-        <h1
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: '40px',
-            fontWeight: 500,
-            letterSpacing: '-0.01em',
-            color: '#F5F3EF',
-          }}
-        >
-          New Arrivals
-        </h1>
-      </div>
+    <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '48px' }}>
+      <p style={{ fontSize: '12px', letterSpacing: '0.06em', color: '#6b6558', marginBottom: '8px' }}>
+        HOME / ALL PRODUCTS
+      </p>
+      <h1
+        style={{
+          fontFamily: "'Cormorant Garamond', serif",
+          fontSize: '44px',
+          fontWeight: 500,
+          color: '#141310',
+          margin: '0 0 40px',
+        }}
+      >
+        All Products
+      </h1>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gap: '48px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gap: '48px' }}>
         {/* Sidebar */}
         <aside>
-          <div
-            style={{
-              position: 'sticky',
-              top: '80px',
-            }}
-          >
+          <div style={{ position: 'sticky', top: '80px' }}>
             <p
               style={{
-                fontSize: '11px',
-                letterSpacing: '0.12em',
-                fontWeight: 600,
-                color: '#6b6558',
+                fontSize: '13px',
+                letterSpacing: '0.1em',
+                color: '#141310',
                 marginBottom: '16px',
               }}
             >
               CATEGORY
             </p>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <ul style={{ display: 'flex', flexDirection: 'column' }}>
               {categoryLinks.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
                     style={{
                       fontSize: '14px',
-                      color: l.href === '/shop' ? '#F5F3EF' : '#9a9284',
+                      color: l.href === '/shop' ? '#141310' : '#8a8578',
                       fontWeight: l.href === '/shop' ? 600 : 400,
                       display: 'block',
-                      paddingBottom: '10px',
-                      borderBottom: '1px solid #2a2826',
+                      padding: '8px 0',
+                      borderBottom: '1px solid #EFEAE2',
+                      transition: 'padding-left 0.25s ease, color 0.25s ease',
                     }}
                   >
                     {l.label}
-                    <span style={{ float: 'right', fontSize: '12px', color: '#6b6558' }}>
-                      {l.href === '/shop'
-                        ? PRODUCTS.length
-                        : PRODUCTS.filter((p) => p.category === l.href.split('/').pop()).length}
-                    </span>
                   </Link>
                 </li>
               ))}
@@ -84,7 +64,7 @@ export default function ShopPage() {
           </div>
         </aside>
 
-        {/* Product grid with sort */}
+        {/* Grid with sort */}
         <SortableProductGrid products={PRODUCTS} />
       </div>
     </div>

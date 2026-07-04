@@ -4,52 +4,32 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useCart } from '@/lib/cart'
 
+const PLACEHOLDER = 'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 8px,#D9D3C8 8px,#D9D3C8 16px)'
+
 export default function CartPage() {
   const { items, removeItem, updateQty, subtotal } = useCart()
 
   if (items.length === 0) {
     return (
-      <div
-        style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          padding: '80px 24px',
-          textAlign: 'center',
-        }}
-      >
-        <p
-          style={{
-            fontSize: '11px',
-            letterSpacing: '0.16em',
-            color: '#6b6558',
-            marginBottom: '16px',
-          }}
-        >
+      <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '80px 48px', textAlign: 'center' }}>
+        <p style={{ fontSize: '11px', letterSpacing: '0.16em', color: '#6b6558', marginBottom: '16px' }}>
           YOUR BAG
         </p>
-        <h1
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: '36px',
-            fontWeight: 500,
-            marginBottom: '12px',
-            color: '#F5F3EF',
-          }}
-        >
+        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '40px', fontWeight: 500, marginBottom: '12px', color: '#141310' }}>
           Your bag is empty
         </h1>
-        <p style={{ color: '#9a9284', fontSize: '14px', marginBottom: '40px' }}>
+        <p style={{ color: '#6b6558', fontSize: '14px', marginBottom: '40px' }}>
           Discover our collection and add pieces you love.
         </p>
         <Link
           href="/shop"
           style={{
             display: 'inline-block',
-            padding: '14px 40px',
-            background: '#DAD4C8',
-            color: '#0d0c0a',
-            fontSize: '12px',
-            letterSpacing: '0.14em',
+            padding: '16px 34px',
+            background: '#141310',
+            color: '#F5F3EF',
+            fontSize: '13px',
+            letterSpacing: '0.12em',
             fontWeight: 500,
           }}
         >
@@ -60,265 +40,105 @@ export default function CartPage() {
   }
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 24px' }}>
-      <div style={{ marginBottom: '40px', borderBottom: '1px solid #2a2826', paddingBottom: '20px' }}>
-        <p
-          style={{
-            fontSize: '11px',
-            letterSpacing: '0.16em',
-            color: '#6b6558',
-            marginBottom: '8px',
-          }}
-        >
-          YOUR BAG
-        </p>
-        <h1
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: '36px',
-            fontWeight: 500,
-            color: '#F5F3EF',
-          }}
-        >
-          Shopping Bag
-        </h1>
-      </div>
+    <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '64px 48px' }}>
+      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, fontSize: '40px', color: '#141310', margin: '0 0 40px' }}>
+        Shopping Bag
+      </h1>
 
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 360px',
-          gap: '64px',
-          alignItems: 'start',
-        }}
-      >
-        {/* Items list */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '64px', alignItems: 'start' }}>
+        {/* Items */}
         <div>
           {items.map((item, idx) => (
             <div
               key={`${item.productId}-${item.size}`}
               style={{
                 display: 'grid',
-                gridTemplateColumns: '100px 1fr',
+                gridTemplateColumns: '100px 1fr auto',
                 gap: '20px',
-                paddingBottom: '28px',
-                marginBottom: '28px',
-                borderBottom: idx < items.length - 1 ? '1px solid #2a2826' : 'none',
+                padding: '24px 0',
+                borderBottom: '1px solid #EFEAE2',
+                alignItems: 'center',
               }}
             >
               {/* Image */}
-              <div
-                style={{
-                  aspectRatio: '3/4',
-                  background: '#1a1916',
-                  position: 'relative',
-                  overflow: 'hidden',
-                }}
-              >
-                {item.image ? (
+              <div style={{ position: 'relative', aspectRatio: '3/4', overflow: 'hidden', background: PLACEHOLDER }}>
+                {item.image && (
                   <Image src={item.image} alt={item.name} fill style={{ objectFit: 'cover' }} />
-                ) : (
-                  <div
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: '40%',
-                        height: '50%',
-                        border: '1px solid #2a2826',
-                        opacity: 0.5,
-                      }}
-                    />
-                  </div>
                 )}
               </div>
 
-              {/* Details */}
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <div
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'flex-start',
-                      marginBottom: '8px',
-                    }}
-                  >
-                    <div>
-                      <p style={{ fontSize: '15px', fontWeight: 500, marginBottom: '4px', color: '#F5F3EF' }}>
-                        {item.name}
-                      </p>
-                      <p style={{ fontSize: '12px', color: '#6b6558', letterSpacing: '0.06em' }}>
-                        Size: {item.size}
-                      </p>
-                    </div>
-                    <p style={{ fontSize: '15px', fontWeight: 500, color: '#DAD4C8' }}>
-                      ${(item.price * item.quantity).toLocaleString()}
-                    </p>
-                  </div>
-                  <p style={{ fontSize: '13px', color: '#9a9284' }}>${item.price} each</p>
-                </div>
-
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    marginTop: '16px',
-                  }}
-                >
-                  {/* Qty stepper */}
-                  <div
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      border: '1px solid #2a2826',
-                    }}
-                  >
-                    <button
-                      onClick={() =>
-                        updateQty(item.productId, item.size, Math.max(1, item.quantity - 1))
-                      }
-                      style={{
-                        width: '36px',
-                        height: '36px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '16px',
-                        color: '#F5F3EF',
-                        cursor: 'pointer',
-                      }}
-                    >
-                      &minus;
-                    </button>
-                    <span
-                      style={{
-                        width: '40px',
-                        textAlign: 'center',
-                        fontSize: '13px',
-                        fontWeight: 500,
-                        color: '#F5F3EF',
-                      }}
-                    >
-                      {item.quantity}
-                    </span>
-                    <button
-                      onClick={() => updateQty(item.productId, item.size, item.quantity + 1)}
-                      style={{
-                        width: '36px',
-                        height: '36px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '16px',
-                        color: '#F5F3EF',
-                        cursor: 'pointer',
-                      }}
-                    >
-                      &#43;
-                    </button>
-                  </div>
-
-                  {/* Remove */}
+              {/* Info + stepper */}
+              <div>
+                <p style={{ fontSize: '15px', color: '#141310', marginBottom: '6px' }}>{item.name}</p>
+                <p style={{ fontSize: '13px', color: '#6b6558', marginBottom: '12px' }}>Size {item.size}</p>
+                <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #DAD4C8', width: '110px' }}>
                   <button
-                    onClick={() => removeItem(item.productId, item.size)}
-                    style={{
-                      fontSize: '12px',
-                      letterSpacing: '0.08em',
-                      color: '#6b6558',
-                      textDecoration: 'underline',
-                      cursor: 'pointer',
-                    }}
+                    onClick={() => updateQty(item.productId, item.size, Math.max(1, item.quantity - 1))}
+                    style={{ flex: 1, padding: '8px', cursor: 'pointer', color: '#141310' }}
                   >
-                    REMOVE
+                    &minus;
+                  </button>
+                  <span style={{ flex: 1, textAlign: 'center', fontSize: '13px', color: '#141310' }}>
+                    {item.quantity}
+                  </span>
+                  <button
+                    onClick={() => updateQty(item.productId, item.size, item.quantity + 1)}
+                    style={{ flex: 1, padding: '8px', cursor: 'pointer', color: '#141310' }}
+                  >
+                    &#43;
                   </button>
                 </div>
+              </div>
+
+              {/* Price + remove */}
+              <div style={{ textAlign: 'right' }}>
+                <p style={{ fontSize: '15px', color: '#141310', marginBottom: '16px' }}>
+                  ${(item.price * item.quantity).toLocaleString()}
+                </p>
+                <button
+                  onClick={() => removeItem(item.productId, item.size)}
+                  style={{ fontSize: '12px', letterSpacing: '0.06em', color: '#6b6558', textDecoration: 'underline', cursor: 'pointer' }}
+                >
+                  REMOVE
+                </button>
               </div>
             </div>
           ))}
         </div>
 
         {/* Order Summary */}
-        <div
-          style={{
-            background: '#1a1916',
-            padding: '32px',
-            position: 'sticky',
-            top: '80px',
-            border: '1px solid #2a2826',
-          }}
-        >
-          <h2
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: '24px',
-              fontWeight: 500,
-              marginBottom: '24px',
-              color: '#F5F3EF',
-            }}
-          >
+        <div style={{ background: '#EFEAE2', padding: '32px' }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '20px', fontWeight: 600, color: '#141310', marginBottom: '20px' }}>
             Order Summary
           </h2>
-
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '12px',
-              marginBottom: '20px',
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ fontSize: '13px', color: '#9a9284' }}>Subtotal</span>
-              <span style={{ fontSize: '13px', fontWeight: 500, color: '#F5F3EF' }}>
-                ${subtotal.toLocaleString()}
-              </span>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ fontSize: '13px', color: '#9a9284' }}>Shipping</span>
-              <span style={{ fontSize: '13px', color: '#9a9284' }}>Free</span>
-            </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px', marginBottom: '12px' }}>
+            <span style={{ color: '#6b6558' }}>Subtotal</span>
+            <span style={{ color: '#141310' }}>${subtotal.toLocaleString()}</span>
           </div>
-
-          <div
-            style={{
-              borderTop: '1px solid #2a2826',
-              paddingTop: '16px',
-              marginBottom: '28px',
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ fontSize: '15px', fontWeight: 600, color: '#F5F3EF' }}>Total</span>
-              <span style={{ fontSize: '15px', fontWeight: 600, color: '#DAD4C8' }}>
-                ${subtotal.toLocaleString()}
-              </span>
-            </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px', marginBottom: '12px' }}>
+            <span style={{ color: '#6b6558' }}>Shipping</span>
+            <span style={{ color: '#6b6558' }}>Free</span>
           </div>
-
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '16px', margin: '20px 0', paddingTop: '16px', borderTop: '1px solid #DAD4C8' }}>
+            <span style={{ color: '#141310' }}>Total</span>
+            <span style={{ color: '#141310', fontWeight: 600 }}>${subtotal.toLocaleString()}</span>
+          </div>
           <Link
             href="/checkout"
             style={{
               display: 'block',
               width: '100%',
-              padding: '16px',
-              background: '#DAD4C8',
-              color: '#0d0c0a',
-              fontSize: '12px',
-              letterSpacing: '0.14em',
+              padding: '18px',
+              background: '#141310',
+              color: '#F5F3EF',
+              fontSize: '13px',
+              letterSpacing: '0.12em',
               fontWeight: 500,
               textAlign: 'center',
             }}
           >
             CHECKOUT
           </Link>
-
           <Link
             href="/shop"
             style={{

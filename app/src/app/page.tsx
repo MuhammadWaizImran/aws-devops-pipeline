@@ -3,21 +3,9 @@ import Image from 'next/image'
 import { PRODUCTS } from '@/lib/products'
 
 const categories = [
-  {
-    label: 'Women',
-    slug: 'women',
-    image: null as string | null,
-  },
-  {
-    label: 'Men',
-    slug: 'men',
-    image: '/uploads/caio-coelho-QRN47la37gw-unsplash.jpg',
-  },
-  {
-    label: 'Accessories',
-    slug: 'accessories',
-    image: '/uploads/acc-bangle.jpg',
-  },
+  { label: 'Women', slug: 'women', image: null as string | null },
+  { label: 'Men', slug: 'men', image: '/uploads/caio-coelho-QRN47la37gw-unsplash.jpg' },
+  { label: 'Accessories', slug: 'accessories', image: '/uploads/acc-bangle.jpg' },
 ]
 
 export default function HomePage() {
@@ -25,42 +13,33 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ── HERO ──────────────────────────────────────────────────────── */}
+      {/* ── HERO ── */}
       <section
         style={{
           position: 'relative',
           height: '78vh',
           minHeight: '520px',
           overflow: 'hidden',
+          background: 'repeating-linear-gradient(115deg,#C9C2B5,#C9C2B5 14px,#D9D3C8 14px,#D9D3C8 28px)',
           display: 'flex',
           alignItems: 'flex-end',
         }}
       >
-        {/* Background with heroZoom animation */}
+        {/* Zoom layer */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(160deg, #0a0908 0%, #1a1612 60%, #111009 100%)',
             animation: 'heroZoom 8s ease-out both',
+            background: 'inherit',
           }}
         />
-        {/* Bottom gradient overlay */}
+        {/* Bottom gradient */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background:
-              'linear-gradient(0deg, rgba(13,12,10,0.7) 0%, rgba(13,12,10,0.05) 55%)',
-          }}
-        />
-        {/* Subtle radial texture */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background:
-              'radial-gradient(ellipse at 30% 50%, rgba(218,212,200,0.04) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(218,212,200,0.03) 0%, transparent 50%)',
+            background: 'linear-gradient(0deg, rgba(20,19,16,0.45), rgba(20,19,16,0.05) 55%)',
           }}
         />
 
@@ -70,17 +49,11 @@ export default function HomePage() {
             position: 'relative',
             padding: '0 48px 64px',
             width: '100%',
+            color: '#F5F3EF',
             animation: 'fadeUp 0.9s cubic-bezier(.16,1,.3,1) both',
           }}
         >
-          <p
-            style={{
-              fontSize: '13px',
-              letterSpacing: '0.2em',
-              color: '#9a9284',
-              marginBottom: '14px',
-            }}
-          >
+          <p style={{ fontSize: '13px', letterSpacing: '0.2em', marginBottom: '14px' }}>
             AUTUMN / WINTER 2026
           </p>
           <h1
@@ -89,37 +62,38 @@ export default function HomePage() {
               fontWeight: 500,
               fontSize: 'clamp(40px, 6vw, 84px)',
               lineHeight: 1.15,
-              color: '#F5F3EF',
               margin: '0 0 32px',
               maxWidth: '820px',
             }}
           >
             The Quiet Luxury Edit
           </h1>
-          <Link
-            href="/shop"
+          <button
+            onClick={undefined}
             style={{
-              display: 'inline-block',
+              background: '#F5F3EF',
+              color: '#141310',
+              border: 'none',
               padding: '16px 34px',
-              background: '#DAD4C8',
-              color: '#0d0c0a',
               fontSize: '13px',
               letterSpacing: '0.12em',
-              fontWeight: 500,
+              cursor: 'pointer',
             }}
           >
-            SHOP THE COLLECTION
-          </Link>
+            <Link href="/shop" style={{ color: '#141310' }}>
+              SHOP THE COLLECTION
+            </Link>
+          </button>
         </div>
       </section>
 
-      {/* ── CATEGORY TILES ─────────────────────────────────────────────── */}
+      {/* ── CATEGORY TILES ── */}
       <div
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: '2px',
-          background: '#2a2826',
+          background: '#DAD4C8',
         }}
       >
         {categories.map((cat) => (
@@ -137,25 +111,24 @@ export default function HomePage() {
             }}
           >
             {cat.image ? (
-              <Image
-                src={cat.image}
-                alt={cat.label}
-                fill
-                style={{ objectFit: 'cover' }}
-              />
+              <Image src={cat.image} alt={cat.label} fill style={{ objectFit: 'cover' }} />
             ) : (
-              <div style={{ position: 'absolute', inset: 0, background: '#1a1916' }} />
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background:
+                    'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 10px,#D9D3C8 10px,#D9D3C8 20px)',
+                }}
+              />
             )}
-            {/* Gradient overlay */}
             <div
               style={{
                 position: 'absolute',
                 inset: 0,
-                background:
-                  'linear-gradient(0deg, rgba(13,12,10,0.55) 0%, rgba(13,12,10,0.02) 55%)',
+                background: 'linear-gradient(0deg, rgba(20,19,16,0.35), rgba(20,19,16,0.02) 55%)',
               }}
             />
-            {/* Label */}
             <div
               style={{
                 position: 'absolute',
@@ -182,10 +155,8 @@ export default function HomePage() {
         ))}
       </div>
 
-      {/* ── FEATURED PRODUCTS ──────────────────────────────────────────── */}
-      <section
-        style={{ maxWidth: '1440px', margin: '0 auto', padding: '96px 48px 64px' }}
-      >
+      {/* ── FEATURED PRODUCTS ── */}
+      <section style={{ maxWidth: '1440px', margin: '0 auto', padding: '96px 48px 64px' }}>
         <div
           data-reveal=""
           style={{
@@ -200,7 +171,7 @@ export default function HomePage() {
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 500,
               fontSize: '36px',
-              color: '#F5F3EF',
+              color: '#141310',
               margin: 0,
             }}
           >
@@ -211,8 +182,8 @@ export default function HomePage() {
             style={{
               fontSize: '13px',
               letterSpacing: '0.08em',
-              color: '#9a9284',
-              borderBottom: '1px solid #6b6558',
+              color: '#141310',
+              borderBottom: '1px solid #141310',
               paddingBottom: '2px',
             }}
           >
@@ -220,13 +191,7 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '32px',
-          }}
-        >
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px' }}>
           {featured.map((product) => (
             <Link
               key={product.id}
@@ -238,78 +203,47 @@ export default function HomePage() {
               <div
                 style={{
                   aspectRatio: '3/4',
-                  background: '#1a1916',
+                  background:
+                    'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 10px,#D9D3C8 10px,#D9D3C8 20px)',
                   marginBottom: '14px',
                   overflow: 'hidden',
                   position: 'relative',
                 }}
               >
-                {product.image ? (
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
-                ) : (
-                  <div
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: '40%',
-                        height: '50%',
-                        border: '1px solid #2a2826',
-                        opacity: 0.5,
-                      }}
-                    />
-                  </div>
+                {product.image && (
+                  <Image src={product.image} alt={product.name} fill style={{ objectFit: 'cover' }} />
                 )}
               </div>
-              <p style={{ fontSize: '14px', marginBottom: '4px', color: '#F5F3EF' }}>
+              <p style={{ fontSize: '14px', marginBottom: '4px', color: '#141310' }}>
                 {product.name}
               </p>
-              <p style={{ fontSize: '14px', color: '#9a9284' }}>${product.price}</p>
+              <p style={{ fontSize: '14px', color: '#6b6558' }}>${product.price}</p>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* ── EDITORIAL BANNER ───────────────────────────────────────────── */}
+      {/* ── EDITORIAL BANNER ── */}
       <section
         style={{
           position: 'relative',
           height: '60vh',
           minHeight: '420px',
-          background: '#111009',
+          background:
+            'repeating-linear-gradient(70deg,#EFEAE2,#EFEAE2 16px,#E3DCCF 16px,#E3DCCF 32px)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          borderTop: '1px solid #2a2826',
-          borderBottom: '1px solid #2a2826',
         }}
       >
-        <div
-          data-reveal=""
-          style={{
-            textAlign: 'center',
-            maxWidth: '560px',
-            padding: '0 24px',
-          }}
-        >
+        <div data-reveal="" style={{ textAlign: 'center', maxWidth: '560px', padding: '0 24px' }}>
           <blockquote
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 500,
               fontStyle: 'italic',
-              fontSize: 'clamp(28px, 5vw, 52px)',
-              color: '#F5F3EF',
+              fontSize: 'clamp(28px, 5vw, 40px)',
+              color: '#141310',
               lineHeight: 1.3,
               margin: '0 0 20px',
             }}
@@ -321,8 +255,8 @@ export default function HomePage() {
             style={{
               fontSize: '13px',
               letterSpacing: '0.12em',
-              color: '#DAD4C8',
-              borderBottom: '1px solid #6b6558',
+              color: '#141310',
+              borderBottom: '1px solid #141310',
               paddingBottom: '2px',
             }}
           >
