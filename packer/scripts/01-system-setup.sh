@@ -12,7 +12,6 @@ sudo -E apt-get install -y \
   wget \
   unzip \
   git \
-  build-essential \
   ca-certificates \
   gnupg \
   lsb-release
