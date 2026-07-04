@@ -4,7 +4,7 @@ import { Product } from '@/lib/products'
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
-    <Link href={`/product/${product.id}`} style={{ display: 'block' }}>
+    <Link href={`/product/${product.id}`} className="product-link" style={{ display: 'block' }}>
       {/* Image */}
       <div
         style={{

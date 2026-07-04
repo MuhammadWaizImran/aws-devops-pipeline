@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { PRODUCTS, Product } from '@/lib/products'
-import ProductCard from '@/components/ProductCard'
+import SortableProductGrid from '@/components/SortableProductGrid'
 
 const validCategories = ['women', 'men', 'accessories'] as const
 type CategorySlug = typeof validCategories[number]
@@ -133,40 +133,8 @@ export default async function CategoryPage({
           </div>
         </aside>
 
-        {/* Product grid */}
-        <section>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: '24px',
-            }}
-          >
-            <p style={{ fontSize: '13px', color: '#6b6558' }}>
-              {filtered.length} product{filtered.length !== 1 ? 's' : ''}
-            </p>
-          </div>
-          {filtered.length === 0 ? (
-            <div style={{ padding: '60px 0', textAlign: 'center' }}>
-              <p style={{ fontSize: '16px', color: '#6b6558' }}>
-                No products found in this category.
-              </p>
-            </div>
-          ) : (
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: '32px',
-              }}
-            >
-              {filtered.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          )}
-        </section>
+        {/* Product grid with sort */}
+        <SortableProductGrid products={filtered} />
       </div>
     </div>
   )

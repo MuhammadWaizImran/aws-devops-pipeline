@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { PRODUCTS } from '@/lib/products'
-import ProductCard from '@/components/ProductCard'
+import SortableProductGrid from '@/components/SortableProductGrid'
 
 const categoryLinks = [
   { label: 'All', href: '/shop' },
@@ -84,32 +84,8 @@ export default function ShopPage() {
           </div>
         </aside>
 
-        {/* Product grid */}
-        <section>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: '24px',
-            }}
-          >
-            <p style={{ fontSize: '13px', color: '#6b6558' }}>
-              {PRODUCTS.length} products
-            </p>
-          </div>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '32px',
-            }}
-          >
-            {PRODUCTS.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </section>
+        {/* Product grid with sort */}
+        <SortableProductGrid products={PRODUCTS} />
       </div>
     </div>
   )

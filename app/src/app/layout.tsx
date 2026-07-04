@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { CartProvider } from '@/lib/cart'
 import SiteHeader from './SiteHeader'
+import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
   title: 'Prime Bazaar',
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <CartProvider>
           <SiteHeader />
+          <ScrollReveal />
           <main>{children}</main>
 
           {/* Footer */}
