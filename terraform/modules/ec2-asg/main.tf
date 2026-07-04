@@ -108,7 +108,7 @@ resource "aws_autoscaling_group" "app" {
   vpc_zone_identifier       = var.public_subnet_ids
   target_group_arns         = [var.target_group_arn]
   health_check_type         = "ELB"
-  health_check_grace_period = 300
+  health_check_grace_period = 60
   wait_for_capacity_timeout = "0"
 
   launch_template {

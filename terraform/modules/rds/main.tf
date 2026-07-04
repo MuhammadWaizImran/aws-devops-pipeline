@@ -63,9 +63,9 @@ resource "aws_db_instance" "main" {
   db_subnet_group_name       = aws_db_subnet_group.main.name
   vpc_security_group_ids     = [var.rds_security_group_id]
   parameter_group_name       = aws_db_parameter_group.postgres.name
-  multi_az                   = true
+  multi_az                   = false
   publicly_accessible        = false
-  deletion_protection        = true
+  deletion_protection        = false
   skip_final_snapshot        = false
   final_snapshot_identifier  = "${var.project_name}-rds-final-snapshot"
   backup_retention_period    = 7

@@ -146,7 +146,7 @@ jobs:
           REFRESH_ID=$(aws autoscaling start-instance-refresh \
             --auto-scaling-group-name "$ASG_NAME" \
             --strategy Rolling \
-            --preferences '{"MinHealthyPercentage":50,"InstanceWarmup":300}' \
+            --preferences '{"MinHealthyPercentage":0,"InstanceWarmup":60}' \
             --query 'InstanceRefreshId' \
             --output text)
           echo "Instance refresh started: $REFRESH_ID"

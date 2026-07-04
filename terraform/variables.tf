@@ -45,12 +45,12 @@ variable "asg_min_size" {
 
 variable "asg_max_size" {
   type    = number
-  default = 4
+  default = 2
 }
 
 variable "asg_desired_capacity" {
   type    = number
-  default = 2
+  default = 1
 }
 
 variable "db_name" {
