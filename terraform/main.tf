@@ -98,6 +98,11 @@ module "ec2_asg" {
   asg_desired_capacity  = var.asg_desired_capacity
   kms_key_arn           = module.kms.key_arn
   s3_bucket_arn         = module.s3.bucket_arn
+  db_endpoint           = module.rds.db_endpoint
+  db_port               = module.rds.db_port
+  db_name               = var.db_name
+  db_username           = var.db_username
+  db_secret_arn         = module.rds.db_secret_arn
   tags                  = local.common_tags
 }
 

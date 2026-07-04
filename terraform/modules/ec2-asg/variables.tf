@@ -55,3 +55,28 @@ variable "tags" {
   type    = map(string)
   default = {}
 }
+
+variable "db_endpoint" {
+  type    = string
+  default = ""
+}
+
+variable "db_port" {
+  type    = number
+  default = 5432
+}
+
+variable "db_name" {
+  type    = string
+  default = "appdb"
+}
+
+variable "db_username" {
+  type    = string
+  default = "appuser"
+}
+
+variable "db_secret_arn" {
+  type    = string
+  default = ""
+}

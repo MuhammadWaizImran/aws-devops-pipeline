@@ -15,6 +15,7 @@ WorkingDirectory=/opt/app/.next/standalone
 ExecStart=/usr/bin/node server.js
 Restart=always
 RestartSec=5
+EnvironmentFile=-/etc/nextjs-app.env
 Environment=NODE_ENV=production
 Environment=PORT=3000
 StandardOutput=journal

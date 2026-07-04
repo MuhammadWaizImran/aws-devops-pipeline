@@ -44,6 +44,11 @@ resource "aws_iam_role_policy" "ec2_s3_kms" {
           "logs:PutLogEvents"
         ]
         Resource = "*"
+      },
+      {
+        Effect   = "Allow"
+        Action   = ["secretsmanager:GetSecretValue"]
+        Resource = var.db_secret_arn
       }
     ]
   })
@@ -79,12 +84,13 @@ resource "aws_launch_template" "app" {
     }
   }
 
-  user_data = base64encode(<<-EOF
-    #!/bin/bash
-    systemctl start nextjs-app
-    systemctl start nginx
-  EOF
-  )
+  user_data = base64encode(templatefile("${path.module}/user_data.sh", {
+    db_endpoint   = var.db_endpoint
+    db_port       = var.db_port
+    db_name       = var.db_name
+    db_username   = var.db_username
+    db_secret_arn = var.db_secret_arn
+  }))
 
   tag_specifications {
     resource_type = "instance"
