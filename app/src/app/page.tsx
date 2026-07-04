@@ -53,7 +53,7 @@ export default function HomePage() {
               fontWeight: 500,
             }}
           >
-            AUTUMN / WINTER 2026
+            AUTUMN / WINTER 2026 — NEW COLLECTION LIVE ✦
           </p>
           <h1
             style={{
