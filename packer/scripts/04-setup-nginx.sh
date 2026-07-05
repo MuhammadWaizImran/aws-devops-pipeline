@@ -16,13 +16,13 @@ server {
     gzip_types text/plain text/css application/json application/javascript text/xml application/xml text/javascript;
 
     location /_next/static/ {
-        alias /opt/app/.next/static/;
+        alias /opt/app/.next/standalone/.next/static/;
         expires 1y;
         add_header Cache-Control "public, immutable";
     }
 
-    location /public/ {
-        alias /opt/app/public/;
+    location /uploads/ {
+        alias /opt/app/.next/standalone/public/uploads/;
         expires 30d;
     }
 
