@@ -54,7 +54,7 @@ export default function ProductPage() {
         <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '36px', marginBottom: '16px', color: '#141310' }}>
           Product not found
         </h1>
-        <Link href="/shop" style={{ fontSize: '13px', color: '#6b6558', letterSpacing: '0.1em' }}>
+        <Link href="/shop" style={{ fontSize: '13px', color: '#8B7355', letterSpacing: '0.1em' }}>
           CONTINUE SHOPPING
         </Link>
       </div>
@@ -77,7 +77,7 @@ export default function ProductPage() {
       {/* Back link */}
       <Link
         href={`/shop/${product.category}`}
-        style={{ fontSize: '12px', letterSpacing: '0.06em', color: '#6b6558', display: 'inline-block', marginBottom: '32px' }}
+        style={{ fontSize: '12px', letterSpacing: '0.06em', color: '#8B7355', display: 'inline-block', marginBottom: '32px' }}
       >
         ← BACK TO {product.category.toUpperCase()}
       </Link>
@@ -99,7 +99,7 @@ export default function ProductPage() {
                   overflow: 'hidden',
                   background: PLACEHOLDER,
                   cursor: 'pointer',
-                  border: `1px solid ${activeThumb === i ? '#141310' : 'transparent'}`,
+                  border: `1px solid ${activeThumb === i ? '#7A5230' : 'transparent'}`,
                   transition: 'border-color 0.2s',
                 }}
               >
@@ -123,7 +123,7 @@ export default function ProductPage() {
 
         {/* ── RIGHT: Details ── */}
         <div style={{ maxWidth: '420px', minWidth: 0 }}>
-          <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#6b6558', marginBottom: '10px' }}>
+          <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#8B7355', marginBottom: '10px' }}>
             {product.category.toUpperCase()}
           </p>
           <h1
@@ -132,19 +132,19 @@ export default function ProductPage() {
               fontWeight: 500,
               fontSize: '38px',
               lineHeight: 1.15,
-              color: '#141310',
+              color: '#2C1A0E',
               margin: '0 0 14px',
             }}
           >
             {product.name}
           </h1>
-          <p style={{ fontSize: '20px', color: '#141310', marginBottom: '28px' }}>${product.price}</p>
+          <p style={{ fontSize: '20px', color: '#2C1A0E', marginBottom: '28px' }}>${product.price}</p>
 
           {/* SIZE */}
           <div style={{ marginBottom: '28px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
               <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#141310' }}>SIZE</p>
-              <button style={{ fontSize: '11px', letterSpacing: '0.08em', color: '#6b6558', textDecoration: 'underline' }}>
+              <button style={{ fontSize: '11px', letterSpacing: '0.08em', color: '#8B7355', textDecoration: 'underline' }}>
                 SIZE GUIDE
               </button>
             </div>
@@ -159,9 +159,9 @@ export default function ProductPage() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    border: `1px solid ${selectedSize === size ? '#141310' : '#DAD4C8'}`,
-                    background: selectedSize === size ? '#141310' : 'transparent',
-                    color: selectedSize === size ? '#F5F3EF' : '#141310',
+                    border: `1px solid ${selectedSize === size ? '#7A5230' : '#D4B896'}`,
+                    background: selectedSize === size ? '#7A5230' : 'transparent',
+                    color: selectedSize === size ? '#F5F3EF' : '#2C1A0E',
                     fontSize: '13px',
                     cursor: 'pointer',
                     transition: 'all 0.2s',
@@ -175,8 +175,8 @@ export default function ProductPage() {
 
           {/* QUANTITY */}
           <div style={{ marginBottom: '32px' }}>
-            <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#141310', marginBottom: '12px' }}>QUANTITY</p>
-            <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #DAD4C8', width: '120px' }}>
+            <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#2C1A0E', marginBottom: '12px' }}>QUANTITY</p>
+            <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #D4B896', width: '120px' }}>
               <button onClick={() => setQty((q) => Math.max(1, q - 1))} style={{ flex: 1, padding: '10px', fontSize: '16px', cursor: 'pointer', color: '#141310' }}>
                 &minus;
               </button>
@@ -193,7 +193,7 @@ export default function ProductPage() {
             disabled={!selectedSize}
             style={{
               width: '100%',
-              background: '#141310',
+              background: '#7A5230',
               color: '#F5F3EF',
               border: 'none',
               padding: '18px',
@@ -208,7 +208,7 @@ export default function ProductPage() {
           >
             {selectedSize ? 'ADD TO BAG' : 'SELECT A SIZE TO CONTINUE'}
           </button>
-          <p style={{ fontSize: '12px', color: '#6b6558', textAlign: 'center', marginBottom: '32px' }}>
+          <p style={{ fontSize: '12px', color: '#8B7355', textAlign: 'center', marginBottom: '32px' }}>
             Free shipping &amp; returns
           </p>
 
@@ -226,7 +226,7 @@ export default function ProductPage() {
                     padding: '18px 0',
                     fontSize: '13px',
                     letterSpacing: '0.06em',
-                    color: '#141310',
+                    color: '#2C1A0E',
                     cursor: 'pointer',
                   }}
                 >
@@ -236,7 +236,7 @@ export default function ProductPage() {
                   </span>
                 </button>
                 {openAccordion === key && (
-                  <p style={{ paddingBottom: '18px', fontSize: '13px', lineHeight: 1.7, color: '#4a463d', animation: 'fadeUp 0.35s ease both' }}>
+                  <p style={{ paddingBottom: '18px', fontSize: '13px', lineHeight: 1.7, color: '#6B4C30', animation: 'fadeUp 0.35s ease both' }}>
                     {body(product.description)}
                   </p>
                 )}
@@ -253,7 +253,7 @@ export default function ProductPage() {
             position: 'fixed',
             bottom: '32px',
             right: '32px',
-            background: '#141310',
+            background: '#7A5230',
             color: '#F5F3EF',
             padding: '16px 24px',
             fontSize: '13px',

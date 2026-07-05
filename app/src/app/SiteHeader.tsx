@@ -12,8 +12,8 @@ export default function SiteHeader() {
         position: 'sticky',
         top: 0,
         zIndex: 50,
-        background: '#141310',
-        borderBottom: '1px solid #2b2820',
+        background: '#3D2810',
+        borderBottom: '1px solid #4A3020',
       }}
     >
       <div
@@ -46,9 +46,6 @@ export default function SiteHeader() {
           <Link href="/shop" className="nav-link">
             NEW ARRIVALS
           </Link>
-          <Link href="/shop/women" className="nav-link">
-            WOMEN
-          </Link>
           <Link href="/shop/men" className="nav-link">
             MEN
           </Link>
@@ -80,8 +77,8 @@ export default function SiteHeader() {
                 width: '18px',
                 height: '18px',
                 borderRadius: '50%',
-                background: '#F5F3EF',
-                color: '#141310',
+                background: '#DAC4A8',
+                color: '#3D2810',
                 fontSize: '10px',
                 fontWeight: 600,
               }}

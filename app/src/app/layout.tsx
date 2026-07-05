@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 const footerNav = {
   SHOP: [
     { label: 'New Arrivals', href: '/shop' },
-    { label: 'Women', href: '/shop/women' },
     { label: 'Men', href: '/shop/men' },
     { label: 'Accessories', href: '/shop/accessories' },
   ],
@@ -50,11 +49,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {/* Footer */}
           <footer
             style={{
-              background: '#141310',
+              background: '#3D2810',
               color: '#F5F3EF',
               padding: '60px 24px 40px',
               marginTop: '80px',
-              borderTop: '1px solid #2b2820',
+              borderTop: '1px solid #4A3020',
             }}
           >
             <div
@@ -79,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 >
                   PRIME BAZAAR
                 </div>
-                <p style={{ fontSize: '13px', color: '#9a9284', lineHeight: 1.7 }}>
+                <p style={{ fontSize: '13px', color: '#C8A882', lineHeight: 1.7 }}>
                   Quietly considered pieces for the discerning wardrobe.
                   Crafted for permanence, not seasons.
                 </p>
@@ -94,7 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                       letterSpacing: '0.1em',
                       fontWeight: 600,
                       marginBottom: '16px',
-                      color: '#9a9284',
+                      color: '#C8A882',
                     }}
                   >
                     {section}
@@ -116,18 +115,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               style={{
                 maxWidth: '1200px',
                 margin: '40px auto 0',
-                borderTop: '1px solid #2a2826',
+                borderTop: '1px solid #4A3020',
                 paddingTop: '24px',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
               }}
             >
-              <p style={{ fontSize: '12px', color: '#6b6558' }}>
+              <p style={{ fontSize: '12px', color: '#9A846A' }}>
                 &copy; 2026 Prime Bazaar. All rights reserved.
               </p>
               <p
-                style={{ fontSize: '12px', color: '#6b6558', letterSpacing: '0.08em' }}
+                style={{ fontSize: '12px', color: '#9A846A', letterSpacing: '0.08em' }}
               >
                 CRAFTED WITH INTENTION
               </p>

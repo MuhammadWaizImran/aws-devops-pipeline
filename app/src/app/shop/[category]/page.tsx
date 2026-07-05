@@ -3,18 +3,16 @@ import Link from 'next/link'
 import { PRODUCTS, Product } from '@/lib/products'
 import SortableProductGrid from '@/components/SortableProductGrid'
 
-const validCategories = ['women', 'men', 'accessories'] as const
+const validCategories = ['men', 'accessories'] as const
 type CategorySlug = typeof validCategories[number]
 
 const categoryTitles: Record<CategorySlug, string> = {
-  women: 'Women',
   men: 'Men',
   accessories: 'Accessories',
 }
 
 const categoryLinks = [
   { label: 'All Products', href: '/shop' },
-  { label: 'Women', href: '/shop/women' },
   { label: 'Men', href: '/shop/men' },
   { label: 'Accessories', href: '/shop/accessories' },
 ]
@@ -37,7 +35,7 @@ export default async function CategoryPage({
 
   return (
     <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '48px' }}>
-      <p style={{ fontSize: '12px', letterSpacing: '0.06em', color: '#6b6558', marginBottom: '8px' }}>
+      <p style={{ fontSize: '12px', letterSpacing: '0.06em', color: '#8B7355', marginBottom: '8px' }}>
         HOME / {title.toUpperCase()}
       </p>
       <h1
@@ -45,7 +43,7 @@ export default async function CategoryPage({
           fontFamily: "'Cormorant Garamond', serif",
           fontSize: '44px',
           fontWeight: 500,
-          color: '#141310',
+          color: '#2C1A0E',
           margin: '0 0 40px',
         }}
       >
@@ -60,7 +58,7 @@ export default async function CategoryPage({
               style={{
                 fontSize: '13px',
                 letterSpacing: '0.1em',
-                color: '#141310',
+                color: '#2C1A0E',
                 marginBottom: '16px',
               }}
             >
@@ -75,11 +73,11 @@ export default async function CategoryPage({
                       href={l.href}
                       style={{
                         fontSize: '14px',
-                        color: isActive ? '#141310' : '#8a8578',
+                        color: isActive ? '#7A5230' : '#8B7355',
                         fontWeight: isActive ? 600 : 400,
                         display: 'block',
                         padding: '8px 0',
-                        borderBottom: '1px solid #EFEAE2',
+                        borderBottom: '1px solid #EDE5D8',
                         transition: 'padding-left 0.25s ease, color 0.25s ease',
                       }}
                     >

@@ -1,99 +1,28 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { PRODUCTS } from '@/lib/products'
+import HeroSlider from '@/components/HeroSlider'
 
 const categories = [
-  { label: 'Women', slug: 'women', image: null as string | null },
   { label: 'Men', slug: 'men', image: '/uploads/caio-coelho-QRN47la37gw-unsplash.jpg' },
   { label: 'Accessories', slug: 'accessories', image: '/uploads/acc-bangle.jpg' },
 ]
 
 export default function HomePage() {
-  const featured = PRODUCTS.slice(0, 4)
+  const featured = PRODUCTS.filter((p) => p.category !== 'women').slice(0, 4)
 
   return (
     <>
-      {/* ── HERO ── */}
-      <section
-        style={{
-          position: 'relative',
-          height: '78vh',
-          minHeight: '520px',
-          overflow: 'hidden',
-          background: 'repeating-linear-gradient(115deg,#C9C2B5,#C9C2B5 14px,#D9D3C8 14px,#D9D3C8 28px)',
-          display: 'flex',
-          alignItems: 'flex-end',
-        }}
-      >
-        {/* Zoom layer */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            animation: 'heroZoom 8s ease-out both',
-            background: 'inherit',
-          }}
-        />
-        {/* Bottom gradient */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(0deg, rgba(20,19,16,0.45), rgba(20,19,16,0.05) 55%)',
-          }}
-        />
-
-        {/* Hero copy */}
-        <div
-          style={{
-            position: 'relative',
-            padding: '0 48px 64px',
-            width: '100%',
-            color: '#F5F3EF',
-            animation: 'fadeUp 0.9s cubic-bezier(.16,1,.3,1) both',
-          }}
-        >
-          <p style={{ fontSize: '13px', letterSpacing: '0.2em', marginBottom: '14px' }}>
-            AUTUMN / WINTER 2026
-          </p>
-          <h1
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontWeight: 500,
-              fontSize: 'clamp(40px, 6vw, 84px)',
-              lineHeight: 1.15,
-              margin: '0 0 32px',
-              maxWidth: '820px',
-            }}
-          >
-            The Quiet Luxury Edit
-          </h1>
-          <button
-            onClick={undefined}
-            style={{
-              background: '#F5F3EF',
-              color: '#141310',
-              border: 'none',
-              padding: '16px 34px',
-              fontSize: '13px',
-              letterSpacing: '0.12em',
-              cursor: 'pointer',
-            }}
-          >
-            <Link href="/shop" style={{ color: '#141310' }}>
-              SHOP THE COLLECTION
-            </Link>
-          </button>
-        </div>
-      </section>
+      {/* ── HERO — auto-sliding image carousel ── */}
+      <HeroSlider />
 
       {/* ── CATEGORY TILES ── */}
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '2px',
-          background: '#DAD4C8',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: '3px',
+          background: '#D4B896',
         }}
       >
         {categories.map((cat) => (
@@ -126,7 +55,7 @@ export default function HomePage() {
               style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'linear-gradient(0deg, rgba(20,19,16,0.35), rgba(20,19,16,0.02) 55%)',
+                background: 'linear-gradient(0deg, rgba(61,40,16,0.45), rgba(61,40,16,0.02) 55%)',
               }}
             />
             <div
@@ -144,7 +73,7 @@ export default function HomePage() {
                   fontFamily: "'Cormorant Garamond', serif",
                   fontSize: '26px',
                   background: 'rgba(245,243,239,0.92)',
-                  color: '#141310',
+                  color: '#3D2810',
                   padding: '10px 26px',
                 }}
               >
@@ -171,7 +100,7 @@ export default function HomePage() {
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 500,
               fontSize: '36px',
-              color: '#141310',
+              color: '#2C1A0E',
               margin: 0,
             }}
           >
@@ -182,8 +111,8 @@ export default function HomePage() {
             style={{
               fontSize: '13px',
               letterSpacing: '0.08em',
-              color: '#141310',
-              borderBottom: '1px solid #141310',
+              color: '#7A5230',
+              borderBottom: '1px solid #7A5230',
               paddingBottom: '2px',
             }}
           >
@@ -214,10 +143,10 @@ export default function HomePage() {
                   <Image src={product.image} alt={product.name} fill style={{ objectFit: 'cover' }} />
                 )}
               </div>
-              <p style={{ fontSize: '14px', marginBottom: '4px', color: '#141310' }}>
+              <p style={{ fontSize: '14px', marginBottom: '4px', color: '#2C1A0E' }}>
                 {product.name}
               </p>
-              <p style={{ fontSize: '14px', color: '#6b6558' }}>${product.price}</p>
+              <p style={{ fontSize: '14px', color: '#8B7355' }}>${product.price}</p>
             </Link>
           ))}
         </div>
@@ -230,7 +159,7 @@ export default function HomePage() {
           height: '60vh',
           minHeight: '420px',
           background:
-            'repeating-linear-gradient(70deg,#EFEAE2,#EFEAE2 16px,#E3DCCF 16px,#E3DCCF 32px)',
+            'repeating-linear-gradient(70deg,#EDE5D8,#EDE5D8 16px,#DAC9B0 16px,#DAC9B0 32px)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -243,7 +172,7 @@ export default function HomePage() {
               fontWeight: 500,
               fontStyle: 'italic',
               fontSize: 'clamp(28px, 5vw, 40px)',
-              color: '#141310',
+              color: '#3D2810',
               lineHeight: 1.3,
               margin: '0 0 20px',
             }}
@@ -255,8 +184,8 @@ export default function HomePage() {
             style={{
               fontSize: '13px',
               letterSpacing: '0.12em',
-              color: '#141310',
-              borderBottom: '1px solid #141310',
+              color: '#7A5230',
+              borderBottom: '1px solid #7A5230',
               paddingBottom: '2px',
             }}
           >

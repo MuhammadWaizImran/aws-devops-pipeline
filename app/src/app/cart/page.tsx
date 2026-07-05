@@ -12,13 +12,13 @@ export default function CartPage() {
   if (items.length === 0) {
     return (
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '80px 48px', textAlign: 'center' }}>
-        <p style={{ fontSize: '11px', letterSpacing: '0.16em', color: '#6b6558', marginBottom: '16px' }}>
+        <p style={{ fontSize: '11px', letterSpacing: '0.16em', color: '#8B7355', marginBottom: '16px' }}>
           YOUR BAG
         </p>
-        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '40px', fontWeight: 500, marginBottom: '12px', color: '#141310' }}>
+        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '40px', fontWeight: 500, marginBottom: '12px', color: '#2C1A0E' }}>
           Your bag is empty
         </h1>
-        <p style={{ color: '#6b6558', fontSize: '14px', marginBottom: '40px' }}>
+        <p style={{ color: '#8B7355', fontSize: '14px', marginBottom: '40px' }}>
           Discover our collection and add pieces you love.
         </p>
         <Link
@@ -26,7 +26,7 @@ export default function CartPage() {
           style={{
             display: 'inline-block',
             padding: '16px 34px',
-            background: '#141310',
+            background: '#7A5230',
             color: '#F5F3EF',
             fontSize: '13px',
             letterSpacing: '0.12em',
@@ -41,7 +41,7 @@ export default function CartPage() {
 
   return (
     <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '64px 48px' }}>
-      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, fontSize: '40px', color: '#141310', margin: '0 0 40px' }}>
+      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, fontSize: '40px', color: '#2C1A0E', margin: '0 0 40px' }}>
         Shopping Bag
       </h1>
 
@@ -69,21 +69,21 @@ export default function CartPage() {
 
               {/* Info + stepper */}
               <div>
-                <p style={{ fontSize: '15px', color: '#141310', marginBottom: '6px' }}>{item.name}</p>
-                <p style={{ fontSize: '13px', color: '#6b6558', marginBottom: '12px' }}>Size {item.size}</p>
-                <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #DAD4C8', width: '110px' }}>
+                <p style={{ fontSize: '15px', color: '#2C1A0E', marginBottom: '6px' }}>{item.name}</p>
+                <p style={{ fontSize: '13px', color: '#8B7355', marginBottom: '12px' }}>Size {item.size}</p>
+                <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #D4B896', width: '110px' }}>
                   <button
                     onClick={() => updateQty(item.productId, item.size, Math.max(1, item.quantity - 1))}
-                    style={{ flex: 1, padding: '8px', cursor: 'pointer', color: '#141310' }}
+                    style={{ flex: 1, padding: '8px', cursor: 'pointer', color: '#2C1A0E' }}
                   >
                     &minus;
                   </button>
-                  <span style={{ flex: 1, textAlign: 'center', fontSize: '13px', color: '#141310' }}>
+                  <span style={{ flex: 1, textAlign: 'center', fontSize: '13px', color: '#2C1A0E' }}>
                     {item.quantity}
                   </span>
                   <button
                     onClick={() => updateQty(item.productId, item.size, item.quantity + 1)}
-                    style={{ flex: 1, padding: '8px', cursor: 'pointer', color: '#141310' }}
+                    style={{ flex: 1, padding: '8px', cursor: 'pointer', color: '#2C1A0E' }}
                   >
                     &#43;
                   </button>
@@ -92,12 +92,12 @@ export default function CartPage() {
 
               {/* Price + remove */}
               <div style={{ textAlign: 'right' }}>
-                <p style={{ fontSize: '15px', color: '#141310', marginBottom: '16px' }}>
+                <p style={{ fontSize: '15px', color: '#2C1A0E', marginBottom: '16px' }}>
                   ${(item.price * item.quantity).toLocaleString()}
                 </p>
                 <button
                   onClick={() => removeItem(item.productId, item.size)}
-                  style={{ fontSize: '12px', letterSpacing: '0.06em', color: '#6b6558', textDecoration: 'underline', cursor: 'pointer' }}
+                  style={{ fontSize: '12px', letterSpacing: '0.06em', color: '#8B7355', textDecoration: 'underline', cursor: 'pointer' }}
                 >
                   REMOVE
                 </button>
@@ -107,21 +107,21 @@ export default function CartPage() {
         </div>
 
         {/* Order Summary */}
-        <div style={{ background: '#EFEAE2', padding: '32px' }}>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '20px', fontWeight: 600, color: '#141310', marginBottom: '20px' }}>
+        <div style={{ background: '#EDE5D8', padding: '32px' }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '20px', fontWeight: 600, color: '#2C1A0E', marginBottom: '20px' }}>
             Order Summary
           </h2>
           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px', marginBottom: '12px' }}>
-            <span style={{ color: '#6b6558' }}>Subtotal</span>
-            <span style={{ color: '#141310' }}>${subtotal.toLocaleString()}</span>
+            <span style={{ color: '#8B7355' }}>Subtotal</span>
+            <span style={{ color: '#2C1A0E' }}>${subtotal.toLocaleString()}</span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px', marginBottom: '12px' }}>
-            <span style={{ color: '#6b6558' }}>Shipping</span>
-            <span style={{ color: '#6b6558' }}>Free</span>
+            <span style={{ color: '#8B7355' }}>Shipping</span>
+            <span style={{ color: '#8B7355' }}>Free</span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '16px', margin: '20px 0', paddingTop: '16px', borderTop: '1px solid #DAD4C8' }}>
-            <span style={{ color: '#141310' }}>Total</span>
-            <span style={{ color: '#141310', fontWeight: 600 }}>${subtotal.toLocaleString()}</span>
+            <span style={{ color: '#2C1A0E' }}>Total</span>
+            <span style={{ color: '#2C1A0E', fontWeight: 600 }}>${subtotal.toLocaleString()}</span>
           </div>
           <Link
             href="/checkout"
@@ -147,7 +147,7 @@ export default function CartPage() {
               marginTop: '16px',
               fontSize: '12px',
               letterSpacing: '0.08em',
-              color: '#6b6558',
+              color: '#8B7355',
               textDecoration: 'underline',
             }}
           >

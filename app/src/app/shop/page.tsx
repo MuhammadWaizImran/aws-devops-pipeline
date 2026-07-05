@@ -4,15 +4,16 @@ import SortableProductGrid from '@/components/SortableProductGrid'
 
 const categoryLinks = [
   { label: 'All Products', href: '/shop' },
-  { label: 'Women', href: '/shop/women' },
   { label: 'Men', href: '/shop/men' },
   { label: 'Accessories', href: '/shop/accessories' },
 ]
 
 export default function ShopPage() {
+  const products = PRODUCTS.filter((p) => p.category !== 'women')
+
   return (
     <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '48px' }}>
-      <p style={{ fontSize: '12px', letterSpacing: '0.06em', color: '#6b6558', marginBottom: '8px' }}>
+      <p style={{ fontSize: '12px', letterSpacing: '0.06em', color: '#8B7355', marginBottom: '8px' }}>
         HOME / ALL PRODUCTS
       </p>
       <h1
@@ -20,7 +21,7 @@ export default function ShopPage() {
           fontFamily: "'Cormorant Garamond', serif",
           fontSize: '44px',
           fontWeight: 500,
-          color: '#141310',
+          color: '#2C1A0E',
           margin: '0 0 40px',
         }}
       >
@@ -35,7 +36,7 @@ export default function ShopPage() {
               style={{
                 fontSize: '13px',
                 letterSpacing: '0.1em',
-                color: '#141310',
+                color: '#2C1A0E',
                 marginBottom: '16px',
               }}
             >
@@ -48,11 +49,11 @@ export default function ShopPage() {
                     href={l.href}
                     style={{
                       fontSize: '14px',
-                      color: l.href === '/shop' ? '#141310' : '#8a8578',
+                      color: l.href === '/shop' ? '#7A5230' : '#8B7355',
                       fontWeight: l.href === '/shop' ? 600 : 400,
                       display: 'block',
                       padding: '8px 0',
-                      borderBottom: '1px solid #EFEAE2',
+                      borderBottom: '1px solid #EDE5D8',
                       transition: 'padding-left 0.25s ease, color 0.25s ease',
                     }}
                   >
@@ -65,7 +66,7 @@ export default function ShopPage() {
         </aside>
 
         {/* Grid with sort */}
-        <SortableProductGrid products={PRODUCTS} />
+        <SortableProductGrid products={products} />
       </div>
     </div>
   )
