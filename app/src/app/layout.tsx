@@ -51,11 +51,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {/* Footer */}
           <footer
             style={{
-              background: '#141310',
+              background: '#C24D00',
               color: '#F5F3EF',
               padding: '60px 24px 40px',
               marginTop: '80px',
-              borderTop: '1px solid #2b2820',
+              borderTop: '1px solid #8B3600',
             }}
           >
             <div
@@ -117,7 +117,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               style={{
                 maxWidth: '1200px',
                 margin: '40px auto 0',
-                borderTop: '1px solid #2a2826',
+                borderTop: '1px solid #8B3600',
                 paddingTop: '24px',
                 display: 'flex',
                 justifyContent: 'space-between',

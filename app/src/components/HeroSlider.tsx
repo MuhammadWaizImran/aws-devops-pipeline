@@ -60,7 +60,7 @@ export default function HeroSlider() {
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(0deg, rgba(20,19,16,0.65) 0%, rgba(20,19,16,0.05) 55%)',
+          background: 'linear-gradient(0deg, rgba(194,77,0,0.75) 0%, rgba(194,77,0,0.05) 55%)',
           zIndex: 2,
         }}
       />
@@ -96,7 +96,7 @@ export default function HeroSlider() {
           style={{
             display: 'inline-block',
             padding: '16px 34px',
-            background: '#141310',
+            background: '#C24D00',
             color: '#F5F3EF',
             fontSize: '13px',
             letterSpacing: '0.12em',
