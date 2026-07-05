@@ -13,7 +13,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "tf-state-288720721698"
+    bucket         = "tf-state-238337501567"
     key            = "aws-devops-project/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true

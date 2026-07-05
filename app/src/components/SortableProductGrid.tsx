@@ -37,7 +37,7 @@ export default function SortableProductGrid({
           marginBottom: '24px',
         }}
       >
-        <p style={{ fontSize: '13px', color: '#8B7355' }}>
+        <p style={{ fontSize: '13px', color: '#6b6558' }}>
           {products.length} product{products.length !== 1 ? 's' : ''}
         </p>
         <select
@@ -45,9 +45,9 @@ export default function SortableProductGrid({
           onChange={(e) => setSort(e.target.value as SortOption)}
           style={{
             padding: '8px 14px',
-            border: '1px solid #D4B896',
+            border: '1px solid #DAD4C8',
             background: '#F5F3EF',
-            color: '#2C1A0E',
+            color: '#141310',
             fontSize: '13px',
             cursor: 'pointer',
             outline: 'none',

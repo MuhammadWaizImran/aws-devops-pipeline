@@ -3,6 +3,7 @@ import './globals.css'
 import { CartProvider } from '@/lib/cart'
 import SiteHeader from './SiteHeader'
 import ScrollReveal from '@/components/ScrollReveal'
+import SplashScreen from '@/components/SplashScreen'
 
 export const metadata: Metadata = {
   title: 'Prime Bazaar',
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <CartProvider>
+          <SplashScreen />
           <SiteHeader />
           <ScrollReveal />
           <main>{children}</main>
@@ -49,11 +51,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {/* Footer */}
           <footer
             style={{
-              background: '#3D2810',
+              background: '#141310',
               color: '#F5F3EF',
               padding: '60px 24px 40px',
               marginTop: '80px',
-              borderTop: '1px solid #4A3020',
+              borderTop: '1px solid #2b2820',
             }}
           >
             <div
@@ -78,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 >
                   PRIME BAZAAR
                 </div>
-                <p style={{ fontSize: '13px', color: '#C8A882', lineHeight: 1.7 }}>
+                <p style={{ fontSize: '13px', color: '#9a9284', lineHeight: 1.7 }}>
                   Quietly considered pieces for the discerning wardrobe.
                   Crafted for permanence, not seasons.
                 </p>
@@ -93,14 +95,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                       letterSpacing: '0.1em',
                       fontWeight: 600,
                       marginBottom: '16px',
-                      color: '#C8A882',
+                      color: '#9a9284',
                     }}
                   >
                     {section}
                   </div>
-                  <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px', listStyle: 'none' }}>
                     {links.map((l) => (
-                      <li key={l.label}>
+                      <li key={l.label} style={{ listStyle: 'none' }}>
                         <a href={l.href} className="footer-link">
                           {l.label}
                         </a>
@@ -115,19 +117,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               style={{
                 maxWidth: '1200px',
                 margin: '40px auto 0',
-                borderTop: '1px solid #4A3020',
+                borderTop: '1px solid #2a2826',
                 paddingTop: '24px',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
               }}
             >
-              <p style={{ fontSize: '12px', color: '#9A846A' }}>
+              <p style={{ fontSize: '12px', color: '#6b6558' }}>
                 &copy; 2026 Prime Bazaar. All rights reserved.
               </p>
-              <p
-                style={{ fontSize: '12px', color: '#9A846A', letterSpacing: '0.08em' }}
-              >
+              <p style={{ fontSize: '12px', color: '#6b6558', letterSpacing: '0.08em' }}>
                 CRAFTED WITH INTENTION
               </p>
             </div>

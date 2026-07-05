@@ -20,8 +20,8 @@ export default function ProductCard({ product }: { product: Product }) {
         )}
       </div>
 
-      <p style={{ fontSize: '14px', marginBottom: '4px', color: '#2C1A0E' }}>{product.name}</p>
-      <p style={{ fontSize: '14px', color: '#8B7355' }}>${product.price}</p>
+      <p style={{ fontSize: '14px', marginBottom: '4px', color: '#141310' }}>{product.name}</p>
+      <p style={{ fontSize: '14px', color: '#6b6558' }}>${product.price}</p>
     </Link>
   )
 }

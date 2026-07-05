@@ -18,7 +18,7 @@ export default function HeroSlider() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((c) => (c + 1) % SLIDES.length)
-    }, 3500)
+    }, 2800)
     return () => clearInterval(timer)
   }, [])
 
@@ -26,8 +26,8 @@ export default function HeroSlider() {
     <section
       style={{
         position: 'relative',
-        height: '78vh',
-        minHeight: '520px',
+        height: '82vh',
+        minHeight: '560px',
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'flex-end',
@@ -41,7 +41,7 @@ export default function HeroSlider() {
             position: 'absolute',
             inset: 0,
             opacity: i === current ? 1 : 0,
-            transition: 'opacity 1.4s ease-in-out',
+            transition: 'opacity 1.2s ease-in-out',
             zIndex: i === current ? 1 : 0,
           }}
         >
@@ -49,18 +49,18 @@ export default function HeroSlider() {
             src={slide.src}
             alt={slide.label}
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', objectPosition: 'center center' }}
             priority={i === 0}
           />
         </div>
       ))}
 
-      {/* Dark brown gradient overlay */}
+      {/* Dark overlay — gradient from bottom */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(0deg, rgba(61,40,16,0.75) 0%, rgba(61,40,16,0.08) 60%)',
+          background: 'linear-gradient(0deg, rgba(20,19,16,0.65) 0%, rgba(20,19,16,0.05) 55%)',
           zIndex: 2,
         }}
       />
@@ -76,7 +76,7 @@ export default function HeroSlider() {
           animation: 'fadeUp 0.9s cubic-bezier(.16,1,.3,1) both',
         }}
       >
-        <p style={{ fontSize: '13px', letterSpacing: '0.2em', marginBottom: '14px', color: '#DAC4A8' }}>
+        <p style={{ fontSize: '13px', letterSpacing: '0.2em', marginBottom: '14px', color: '#DAD4C8' }}>
           AUTUMN / WINTER 2026
         </p>
         <h1
@@ -96,7 +96,7 @@ export default function HeroSlider() {
           style={{
             display: 'inline-block',
             padding: '16px 34px',
-            background: '#7A5230',
+            background: '#141310',
             color: '#F5F3EF',
             fontSize: '13px',
             letterSpacing: '0.12em',

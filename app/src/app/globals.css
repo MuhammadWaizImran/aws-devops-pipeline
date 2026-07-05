@@ -17,7 +17,7 @@ html {
 body {
   font-family: Helvetica, Arial, sans-serif;
   background: #F5F3EF;
-  color: #2C1A0E;
+  color: #141310;
   line-height: 1.6;
 }
 
@@ -53,31 +53,32 @@ textarea {
 
 .footer-link {
   font-size: 13px;
-  color: #C8A882;
+  color: #c8c1b6;
+  text-decoration: none;
   transition: color 0.2s;
+  display: inline-block;
 }
 
 .footer-link:hover {
   color: #F5F3EF;
 }
 
-.nav-link {
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  color: #F5F3EF;
-  transition: color 0.2s;
-}
-
-.nav-link:hover {
-  color: #DAC4A8;
-}
-
-/* ── Animations (dc.html advancements) ─────────────────────────────── */
+/* ── Animations ─────────────────────────────── */
 @keyframes heroZoom  { from { transform: scale(1.08); } to { transform: scale(1); } }
 @keyframes fadeUp    { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes toastIn   { from { opacity: 0; transform: translateY(8px);  } to { opacity: 1; transform: translateY(0); } }
 
-/* Scroll-reveal: IntersectionObserver in ScrollReveal.tsx flips these */
+/* Splash screen animations */
+@keyframes splashIn {
+  from { opacity: 0; letter-spacing: 0.5em; }
+  to   { opacity: 1; letter-spacing: 0.22em; }
+}
+@keyframes splashLine {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Scroll-reveal */
 [data-reveal] {
   opacity: 0;
   transform: translateY(28px);

@@ -5,7 +5,7 @@ import HeroSlider from '@/components/HeroSlider'
 
 const categories = [
   { label: 'Men', slug: 'men', image: '/uploads/caio-coelho-QRN47la37gw-unsplash.jpg' },
-  { label: 'Accessories', slug: 'accessories', image: '/uploads/acc-bangle.jpg' },
+  { label: 'Accessories', slug: 'accessories', image: '/uploads/mnz-ToLMORRb97Q-unsplash.jpg' },
 ]
 
 export default function HomePage() {
@@ -21,8 +21,8 @@ export default function HomePage() {
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
-          gap: '3px',
-          background: '#D4B896',
+          gap: '2px',
+          background: '#DAD4C8',
         }}
       >
         {categories.map((cat) => (
@@ -46,8 +46,7 @@ export default function HomePage() {
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background:
-                    'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 10px,#D9D3C8 10px,#D9D3C8 20px)',
+                  background: 'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 10px,#D9D3C8 10px,#D9D3C8 20px)',
                 }}
               />
             )}
@@ -55,7 +54,7 @@ export default function HomePage() {
               style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'linear-gradient(0deg, rgba(61,40,16,0.45), rgba(61,40,16,0.02) 55%)',
+                background: 'linear-gradient(0deg, rgba(20,19,16,0.45), rgba(20,19,16,0.02) 55%)',
               }}
             />
             <div
@@ -73,7 +72,7 @@ export default function HomePage() {
                   fontFamily: "'Cormorant Garamond', serif",
                   fontSize: '26px',
                   background: 'rgba(245,243,239,0.92)',
-                  color: '#3D2810',
+                  color: '#141310',
                   padding: '10px 26px',
                 }}
               >
@@ -100,7 +99,7 @@ export default function HomePage() {
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 500,
               fontSize: '36px',
-              color: '#2C1A0E',
+              color: '#141310',
               margin: 0,
             }}
           >
@@ -111,8 +110,8 @@ export default function HomePage() {
             style={{
               fontSize: '13px',
               letterSpacing: '0.08em',
-              color: '#7A5230',
-              borderBottom: '1px solid #7A5230',
+              color: '#141310',
+              borderBottom: '1px solid #141310',
               paddingBottom: '2px',
             }}
           >
@@ -132,8 +131,7 @@ export default function HomePage() {
               <div
                 style={{
                   aspectRatio: '3/4',
-                  background:
-                    'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 10px,#D9D3C8 10px,#D9D3C8 20px)',
+                  background: 'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 10px,#D9D3C8 10px,#D9D3C8 20px)',
                   marginBottom: '14px',
                   overflow: 'hidden',
                   position: 'relative',
@@ -143,10 +141,10 @@ export default function HomePage() {
                   <Image src={product.image} alt={product.name} fill style={{ objectFit: 'cover' }} />
                 )}
               </div>
-              <p style={{ fontSize: '14px', marginBottom: '4px', color: '#2C1A0E' }}>
+              <p style={{ fontSize: '14px', marginBottom: '4px', color: '#141310' }}>
                 {product.name}
               </p>
-              <p style={{ fontSize: '14px', color: '#8B7355' }}>${product.price}</p>
+              <p style={{ fontSize: '14px', color: '#6b6558' }}>${product.price}</p>
             </Link>
           ))}
         </div>
@@ -158,8 +156,7 @@ export default function HomePage() {
           position: 'relative',
           height: '60vh',
           minHeight: '420px',
-          background:
-            'repeating-linear-gradient(70deg,#EDE5D8,#EDE5D8 16px,#DAC9B0 16px,#DAC9B0 32px)',
+          background: 'repeating-linear-gradient(70deg,#EFEAE2,#EFEAE2 16px,#E3DCCF 16px,#E3DCCF 32px)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -172,7 +169,7 @@ export default function HomePage() {
               fontWeight: 500,
               fontStyle: 'italic',
               fontSize: 'clamp(28px, 5vw, 40px)',
-              color: '#3D2810',
+              color: '#141310',
               lineHeight: 1.3,
               margin: '0 0 20px',
             }}
@@ -184,8 +181,8 @@ export default function HomePage() {
             style={{
               fontSize: '13px',
               letterSpacing: '0.12em',
-              color: '#7A5230',
-              borderBottom: '1px solid #7A5230',
+              color: '#141310',
+              borderBottom: '1px solid #141310',
               paddingBottom: '2px',
             }}
           >

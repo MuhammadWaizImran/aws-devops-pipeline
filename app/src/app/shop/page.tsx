@@ -49,11 +49,11 @@ export default function ShopPage() {
                     href={l.href}
                     style={{
                       fontSize: '14px',
-                      color: l.href === '/shop' ? '#7A5230' : '#8B7355',
+                      color: l.href === '/shop' ? '#141310' : '#8a8578',
                       fontWeight: l.href === '/shop' ? 600 : 400,
                       display: 'block',
                       padding: '8px 0',
-                      borderBottom: '1px solid #EDE5D8',
+                      borderBottom: '1px solid #EFEAE2',
                       transition: 'padding-left 0.25s ease, color 0.25s ease',
                     }}
                   >
