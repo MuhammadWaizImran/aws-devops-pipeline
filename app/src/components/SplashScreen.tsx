@@ -21,7 +21,7 @@ export default function SplashScreen() {
       style={{
         position: 'fixed',
         inset: 0,
-        background: '#C24D00',
+        background: '#141310',
         zIndex: 9999,
         display: 'flex',
         flexDirection: 'column',
