@@ -20,7 +20,7 @@ export default function HomePage() {
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
           gap: '2px',
-          background: '#0a0a0a',
+          background: '#DAD4C8',
         }}
       >
         {categories.map((cat) => (
@@ -40,13 +40,19 @@ export default function HomePage() {
             {cat.image ? (
               <Image src={cat.image} alt={cat.label} fill style={{ objectFit: 'cover' }} />
             ) : (
-              <div style={{ position: 'absolute', inset: 0, background: '#0a0a0a' }} />
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 10px,#D9D3C8 10px,#D9D3C8 20px)',
+                }}
+              />
             )}
             <div
               style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.05) 55%)',
+                background: 'linear-gradient(0deg, rgba(20,19,16,0.55), rgba(20,19,16,0.02) 55%)',
               }}
             />
             <div
@@ -63,8 +69,8 @@ export default function HomePage() {
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
                   fontSize: '26px',
-                  background: '#C24D00',
-                  color: '#ffffff',
+                  background: 'rgba(245,243,239,0.92)',
+                  color: '#141310',
                   padding: '10px 26px',
                 }}
               >
@@ -90,7 +96,7 @@ export default function HomePage() {
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 500,
               fontSize: '36px',
-              color: '#C24D00',
+              color: '#141310',
               margin: 0,
             }}
           >
@@ -101,8 +107,8 @@ export default function HomePage() {
             style={{
               fontSize: '13px',
               letterSpacing: '0.08em',
-              color: '#C24D00',
-              borderBottom: '1px solid #C24D00',
+              color: '#141310',
+              borderBottom: '1px solid #141310',
               paddingBottom: '2px',
             }}
           >
@@ -122,7 +128,7 @@ export default function HomePage() {
               <div
                 style={{
                   aspectRatio: '3/4',
-                  background: '#1a1a1a',
+                  background: 'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 10px,#D9D3C8 10px,#D9D3C8 20px)',
                   marginBottom: '14px',
                   overflow: 'hidden',
                   position: 'relative',
@@ -132,10 +138,10 @@ export default function HomePage() {
                   <Image src={product.image} alt={product.name} fill style={{ objectFit: 'cover' }} />
                 )}
               </div>
-              <p style={{ fontSize: '14px', marginBottom: '4px', color: '#C24D00' }}>
+              <p style={{ fontSize: '14px', marginBottom: '4px', color: '#141310' }}>
                 {product.name}
               </p>
-              <p style={{ fontSize: '14px', color: '#9a9284' }}>${product.price}</p>
+              <p style={{ fontSize: '14px', color: '#6b6558' }}>${product.price}</p>
             </Link>
           ))}
         </div>
@@ -146,12 +152,10 @@ export default function HomePage() {
           position: 'relative',
           height: '60vh',
           minHeight: '420px',
-          background: '#111111',
+          background: 'repeating-linear-gradient(70deg,#EFEAE2,#EFEAE2 16px,#E3DCCF 16px,#E3DCCF 32px)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          borderTop: '1px solid #C24D00',
-          borderBottom: '1px solid #C24D00',
         }}
       >
         <div data-reveal="" style={{ textAlign: 'center', maxWidth: '560px', padding: '0 24px' }}>
@@ -161,7 +165,7 @@ export default function HomePage() {
               fontWeight: 500,
               fontStyle: 'italic',
               fontSize: 'clamp(28px, 5vw, 40px)',
-              color: '#C24D00',
+              color: '#141310',
               lineHeight: 1.3,
               margin: '0 0 20px',
             }}
@@ -173,8 +177,8 @@ export default function HomePage() {
             style={{
               fontSize: '13px',
               letterSpacing: '0.12em',
-              color: '#C24D00',
-              borderBottom: '1px solid #C24D00',
+              color: '#141310',
+              borderBottom: '1px solid #141310',
               paddingBottom: '2px',
             }}
           >

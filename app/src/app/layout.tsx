@@ -3,6 +3,7 @@ import './globals.css'
 import { CartProvider } from '@/lib/cart'
 import SiteHeader from './SiteHeader'
 import ScrollReveal from '@/components/ScrollReveal'
+import SplashScreen from '@/components/SplashScreen'
 
 export const metadata: Metadata = {
   title: 'Prime Bazaar',
@@ -42,17 +43,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <CartProvider>
+          <SplashScreen />
           <SiteHeader />
           <ScrollReveal />
           <main>{children}</main>
 
           <footer
             style={{
-              background: '#0a0a0a',
+              background: '#141310',
               color: '#F5F3EF',
               padding: '60px 24px 40px',
               marginTop: '80px',
-              borderTop: '1px solid #C24D00',
+              borderTop: '1px solid #2b2820',
             }}
           >
             <div
@@ -72,7 +74,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     fontWeight: 600,
                     letterSpacing: '0.12em',
                     marginBottom: '16px',
-                    color: '#C24D00',
                   }}
                 >
                   PRIME BAZAAR
@@ -91,7 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                       letterSpacing: '0.1em',
                       fontWeight: 600,
                       marginBottom: '16px',
-                      color: '#C24D00',
+                      color: '#9a9284',
                     }}
                   >
                     {section}
@@ -113,7 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               style={{
                 maxWidth: '1200px',
                 margin: '40px auto 0',
-                borderTop: '1px solid #C24D00',
+                borderTop: '1px solid #2b2820',
                 paddingTop: '24px',
                 display: 'flex',
                 justifyContent: 'space-between',
