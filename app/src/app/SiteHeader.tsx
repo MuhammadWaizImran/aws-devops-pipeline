@@ -11,7 +11,7 @@ const NAV_ITEMS = [
   { label: 'ACCESSORIES', href: '/shop/accessories' },
 ]
 
-const HEADER_BG = '#141310'
+const HEADER_BG = '#C24D00'
 
 function getActiveIdx(pathname: string) {
   if (pathname === '/shop') return 0
@@ -54,7 +54,7 @@ export default function SiteHeader() {
         top: 0,
         zIndex: 50,
         background: HEADER_BG,
-        borderBottom: '1px solid #2b2820',
+        borderBottom: '1px solid #8B3600',
       }}
     >
       <div
