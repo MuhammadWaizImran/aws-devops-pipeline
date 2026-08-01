@@ -18,7 +18,7 @@ const STEPS: Step[] = ['shipping', 'payment', 'review']
 const STEP_LABELS = { shipping: '1. SHIPPING', payment: '2. PAYMENT', review: '3. REVIEW', confirmed: '' }
 
 const inputStyle: React.CSSProperties = {
-  width: '100%', padding: '14px', border: '1px solid #E5E5E5',
+  width: '100%', padding: '14px', border: '1px solid #E8E0D0',
   background: '#FFFFFF', fontSize: '14px', color: '#141310', outline: 'none',
 }
 const labelStyle: React.CSSProperties = {
@@ -240,7 +240,7 @@ export default function CheckoutPage() {
         </div>
 
         {/* ── ORDER SUMMARY ── */}
-        <div style={{ background: '#F7F7F7', padding: '32px' }}>
+        <div style={{ background: '#F5F3EF', padding: '32px' }}>
           <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '20px', fontWeight: 600, color: '#141310', marginBottom: '20px' }}>
             Order Summary
           </h3>
@@ -250,7 +250,7 @@ export default function CheckoutPage() {
               <span>${(item.price * item.quantity).toLocaleString()}</span>
             </div>
           ))}
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '16px', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E5E5E5', color: '#141310' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '16px', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E8E0D0', color: '#141310' }}>
             <span>Total</span>
             <span style={{ fontWeight: 600 }}>${subtotal.toLocaleString()}</span>
           </div>

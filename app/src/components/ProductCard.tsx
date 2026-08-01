@@ -9,7 +9,7 @@ export default function ProductCard({ product }: { product: Product }) {
         style={{
           aspectRatio: '3/4',
           background:
-            'repeating-linear-gradient(45deg,#DADADA,#DADADA 10px,#E5E5E5 10px,#E5E5E5 20px)',
+            'repeating-linear-gradient(45deg,#DAD4C8,#DAD4C8 10px,#E8E0D0 10px,#E8E0D0 20px)',
           marginBottom: '14px',
           overflow: 'hidden',
           position: 'relative',

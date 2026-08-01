@@ -51,7 +51,7 @@ export default function SplashScreen() {
         style={{
           height: '1px',
           width: '56px',
-          background: '#E5E5E5',
+          background: '#E8E0D0',
           transformOrigin: 'center',
           animation: 'splashLine 0.9s 0.5s ease both',
         }}

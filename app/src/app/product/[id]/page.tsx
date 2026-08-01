@@ -29,7 +29,7 @@ const ACCORDION_DEFS: { key: AccordionKey; title: string; body: (desc: string) =
 ]
 
 const PLACEHOLDER =
-  'repeating-linear-gradient(45deg,#DADADA,#DADADA 8px,#E5E5E5 8px,#E5E5E5 16px)'
+  'repeating-linear-gradient(45deg,#DAD4C8,#DAD4C8 8px,#E8E0D0 8px,#E8E0D0 16px)'
 
 export default function ProductPage() {
   const params = useParams()
@@ -159,7 +159,7 @@ export default function ProductPage() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    border: `1px solid ${selectedSize === size ? '#141310' : '#E5E5E5'}`,
+                    border: `1px solid ${selectedSize === size ? '#141310' : '#E8E0D0'}`,
                     background: selectedSize === size ? '#141310' : 'transparent',
                     color: selectedSize === size ? '#FFFFFF' : '#141310',
                     fontSize: '13px',
@@ -176,7 +176,7 @@ export default function ProductPage() {
           {/* QUANTITY */}
           <div style={{ marginBottom: '32px' }}>
             <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#141310', marginBottom: '12px' }}>QUANTITY</p>
-            <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #E5E5E5', width: '120px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #E8E0D0', width: '120px' }}>
               <button onClick={() => setQty((q) => Math.max(1, q - 1))} style={{ flex: 1, padding: '10px', fontSize: '16px', cursor: 'pointer', color: '#141310' }}>
                 &minus;
               </button>
@@ -213,9 +213,9 @@ export default function ProductPage() {
           </p>
 
           {/* ACCORDIONS */}
-          <div style={{ borderTop: '1px solid #E5E5E5' }}>
+          <div style={{ borderTop: '1px solid #E8E0D0' }}>
             {ACCORDION_DEFS.map(({ key, title, body }) => (
-              <div key={key} style={{ borderBottom: '1px solid #E5E5E5' }}>
+              <div key={key} style={{ borderBottom: '1px solid #E8E0D0' }}>
                 <button
                   onClick={() => toggleAccordion(key)}
                   style={{

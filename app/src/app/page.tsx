@@ -20,7 +20,7 @@ export default function HomePage() {
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
           gap: '2px',
-          background: '#E5E5E5',
+          background: '#E8E0D0',
         }}
       >
         {categories.map((cat) => (
@@ -44,7 +44,7 @@ export default function HomePage() {
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'repeating-linear-gradient(45deg,#DADADA,#DADADA 10px,#E5E5E5 10px,#E5E5E5 20px)',
+                  background: 'repeating-linear-gradient(45deg,#DAD4C8,#DAD4C8 10px,#E8E0D0 10px,#E8E0D0 20px)',
                 }}
               />
             )}
@@ -128,7 +128,7 @@ export default function HomePage() {
               <div
                 style={{
                   aspectRatio: '3/4',
-                  background: 'repeating-linear-gradient(45deg,#DADADA,#DADADA 10px,#E5E5E5 10px,#E5E5E5 20px)',
+                  background: 'repeating-linear-gradient(45deg,#DAD4C8,#DAD4C8 10px,#E8E0D0 10px,#E8E0D0 20px)',
                   marginBottom: '14px',
                   overflow: 'hidden',
                   position: 'relative',
@@ -152,7 +152,7 @@ export default function HomePage() {
           position: 'relative',
           height: '60vh',
           minHeight: '420px',
-          background: 'repeating-linear-gradient(70deg,#F7F7F7,#F7F7F7 16px,#F0F0F0 16px,#F0F0F0 32px)',
+          background: 'repeating-linear-gradient(70deg,#F5F3EF,#F5F3EF 16px,#EFEAE2 16px,#EFEAE2 32px)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',

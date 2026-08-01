@@ -53,7 +53,7 @@ export default function ShopPage() {
                       fontWeight: l.href === '/shop' ? 600 : 400,
                       display: 'block',
                       padding: '8px 0',
-                      borderBottom: '1px solid #F7F7F7',
+                      borderBottom: '1px solid #F5F3EF',
                       transition: 'padding-left 0.25s ease, color 0.25s ease',
                     }}
                   >

@@ -76,7 +76,7 @@ export default function HeroSlider() {
           animation: 'fadeUp 0.9s cubic-bezier(.16,1,.3,1) both',
         }}
       >
-        <p style={{ fontSize: '13px', letterSpacing: '0.2em', marginBottom: '14px', color: '#E5E5E5' }}>
+        <p style={{ fontSize: '13px', letterSpacing: '0.2em', marginBottom: '14px', color: '#E8E0D0' }}>
           AUTUMN / WINTER 2026
         </p>
         <h1
