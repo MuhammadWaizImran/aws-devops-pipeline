@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <footer
             style={{
               background: '#141310',
-              color: '#F5F3EF',
+              color: '#FAF8F5',
               padding: '60px 24px 40px',
               marginTop: '80px',
               borderTop: '1px solid #2b2820',
@@ -78,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 >
                   PRIME BAZAAR
                 </div>
-                <p style={{ fontSize: '13px', color: '#9a9284', lineHeight: 1.7 }}>
+                <p style={{ fontSize: '13px', color: '#C9A227', lineHeight: 1.7 }}>
                   Quietly considered pieces for the discerning wardrobe.
                   Crafted for permanence, not seasons.
                 </p>
@@ -92,7 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                       letterSpacing: '0.1em',
                       fontWeight: 600,
                       marginBottom: '16px',
-                      color: '#9a9284',
+                      color: '#C9A227',
                     }}
                   >
                     {section}
@@ -121,10 +121,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 alignItems: 'center',
               }}
             >
-              <p style={{ fontSize: '12px', color: '#6b6558' }}>
+              <p style={{ fontSize: '12px', color: '#B8860B' }}>
                 &copy; 2026 Prime Bazaar. All rights reserved.
               </p>
-              <p style={{ fontSize: '12px', color: '#6b6558', letterSpacing: '0.08em' }}>
+              <p style={{ fontSize: '12px', color: '#B8860B', letterSpacing: '0.08em' }}>
                 CRAFTED WITH INTENTION
               </p>
             </div>

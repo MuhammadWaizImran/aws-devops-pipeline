@@ -77,7 +77,7 @@ export default async function CategoryPage({
                         fontWeight: isActive ? 600 : 400,
                         display: 'block',
                         padding: '8px 0',
-                        borderBottom: '1px solid #EFEAE2',
+                        borderBottom: '1px solid #F5EFDE',
                         transition: 'padding-left 0.25s ease, color 0.25s ease',
                       }}
                     >

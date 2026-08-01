@@ -29,7 +29,7 @@ const ACCORDION_DEFS: { key: AccordionKey; title: string; body: (desc: string) =
 ]
 
 const PLACEHOLDER =
-  'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 8px,#D9D3C8 8px,#D9D3C8 16px)'
+  'repeating-linear-gradient(45deg,#D4C9A8,#D4C9A8 8px,#E8DFC8 8px,#E8DFC8 16px)'
 
 export default function ProductPage() {
   const params = useParams()
@@ -54,7 +54,7 @@ export default function ProductPage() {
         <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '36px', marginBottom: '16px', color: '#141310' }}>
           Product not found
         </h1>
-        <Link href="/shop" style={{ fontSize: '13px', color: '#6b6558', letterSpacing: '0.1em' }}>
+        <Link href="/shop" style={{ fontSize: '13px', color: '#B8860B', letterSpacing: '0.1em' }}>
           CONTINUE SHOPPING
         </Link>
       </div>
@@ -77,7 +77,7 @@ export default function ProductPage() {
       {/* Back link */}
       <Link
         href={`/shop/${product.category}`}
-        style={{ fontSize: '12px', letterSpacing: '0.06em', color: '#6b6558', display: 'inline-block', marginBottom: '32px' }}
+        style={{ fontSize: '12px', letterSpacing: '0.06em', color: '#B8860B', display: 'inline-block', marginBottom: '32px' }}
       >
         ← BACK TO {product.category.toUpperCase()}
       </Link>
@@ -123,7 +123,7 @@ export default function ProductPage() {
 
         {/* ── RIGHT: Details ── */}
         <div style={{ maxWidth: '420px', minWidth: 0 }}>
-          <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#6b6558', marginBottom: '10px' }}>
+          <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#B8860B', marginBottom: '10px' }}>
             {product.category.toUpperCase()}
           </p>
           <h1
@@ -144,7 +144,7 @@ export default function ProductPage() {
           <div style={{ marginBottom: '28px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
               <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#141310' }}>SIZE</p>
-              <button style={{ fontSize: '11px', letterSpacing: '0.08em', color: '#6b6558', textDecoration: 'underline' }}>
+              <button style={{ fontSize: '11px', letterSpacing: '0.08em', color: '#B8860B', textDecoration: 'underline' }}>
                 SIZE GUIDE
               </button>
             </div>
@@ -159,9 +159,9 @@ export default function ProductPage() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    border: `1px solid ${selectedSize === size ? '#141310' : '#DAD4C8'}`,
+                    border: `1px solid ${selectedSize === size ? '#141310' : '#E8DFC8'}`,
                     background: selectedSize === size ? '#141310' : 'transparent',
-                    color: selectedSize === size ? '#F5F3EF' : '#141310',
+                    color: selectedSize === size ? '#FAF8F5' : '#141310',
                     fontSize: '13px',
                     cursor: 'pointer',
                     transition: 'all 0.2s',
@@ -176,7 +176,7 @@ export default function ProductPage() {
           {/* QUANTITY */}
           <div style={{ marginBottom: '32px' }}>
             <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#141310', marginBottom: '12px' }}>QUANTITY</p>
-            <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #DAD4C8', width: '120px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #E8DFC8', width: '120px' }}>
               <button onClick={() => setQty((q) => Math.max(1, q - 1))} style={{ flex: 1, padding: '10px', fontSize: '16px', cursor: 'pointer', color: '#141310' }}>
                 &minus;
               </button>
@@ -194,7 +194,7 @@ export default function ProductPage() {
             style={{
               width: '100%',
               background: '#141310',
-              color: '#F5F3EF',
+              color: '#FAF8F5',
               border: 'none',
               padding: '18px',
               fontSize: '13px',
@@ -208,14 +208,14 @@ export default function ProductPage() {
           >
             {selectedSize ? 'ADD TO BAG' : 'SELECT A SIZE TO CONTINUE'}
           </button>
-          <p style={{ fontSize: '12px', color: '#6b6558', textAlign: 'center', marginBottom: '32px' }}>
+          <p style={{ fontSize: '12px', color: '#B8860B', textAlign: 'center', marginBottom: '32px' }}>
             Free shipping &amp; returns
           </p>
 
           {/* ACCORDIONS */}
-          <div style={{ borderTop: '1px solid #DAD4C8' }}>
+          <div style={{ borderTop: '1px solid #E8DFC8' }}>
             {ACCORDION_DEFS.map(({ key, title, body }) => (
-              <div key={key} style={{ borderBottom: '1px solid #DAD4C8' }}>
+              <div key={key} style={{ borderBottom: '1px solid #E8DFC8' }}>
                 <button
                   onClick={() => toggleAccordion(key)}
                   style={{
@@ -254,7 +254,7 @@ export default function ProductPage() {
             bottom: '32px',
             right: '32px',
             background: '#7A5230',
-            color: '#F5F3EF',
+            color: '#FAF8F5',
             padding: '16px 24px',
             fontSize: '13px',
             letterSpacing: '0.04em',

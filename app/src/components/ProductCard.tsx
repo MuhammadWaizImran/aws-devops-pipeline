@@ -9,7 +9,7 @@ export default function ProductCard({ product }: { product: Product }) {
         style={{
           aspectRatio: '3/4',
           background:
-            'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 10px,#D9D3C8 10px,#D9D3C8 20px)',
+            'repeating-linear-gradient(45deg,#D4C9A8,#D4C9A8 10px,#E8DFC8 10px,#E8DFC8 20px)',
           marginBottom: '14px',
           overflow: 'hidden',
           position: 'relative',
@@ -21,7 +21,7 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
 
       <p style={{ fontSize: '14px', marginBottom: '4px', color: '#141310' }}>{product.name}</p>
-      <p style={{ fontSize: '14px', color: '#6b6558' }}>${product.price}</p>
+      <p style={{ fontSize: '14px', color: '#B8860B' }}>${product.price}</p>
     </Link>
   )
 }

@@ -18,12 +18,12 @@ const STEPS: Step[] = ['shipping', 'payment', 'review']
 const STEP_LABELS = { shipping: '1. SHIPPING', payment: '2. PAYMENT', review: '3. REVIEW', confirmed: '' }
 
 const inputStyle: React.CSSProperties = {
-  width: '100%', padding: '14px', border: '1px solid #DAD4C8',
-  background: '#F5F3EF', fontSize: '14px', color: '#141310', outline: 'none',
+  width: '100%', padding: '14px', border: '1px solid #E8DFC8',
+  background: '#FAF8F5', fontSize: '14px', color: '#141310', outline: 'none',
 }
 const labelStyle: React.CSSProperties = {
   display: 'block', fontSize: '11px', letterSpacing: '0.1em',
-  fontWeight: 600, color: '#6b6558', marginBottom: '8px',
+  fontWeight: 600, color: '#B8860B', marginBottom: '8px',
 }
 
 export default function CheckoutPage() {
@@ -62,7 +62,7 @@ export default function CheckoutPage() {
   if (step === 'confirmed') {
     return (
       <div style={{ textAlign: 'center', padding: '100px 48px', animation: 'fadeUp 0.6s cubic-bezier(.16,1,.3,1) both' }}>
-        <p style={{ fontSize: '13px', letterSpacing: '0.1em', color: '#6b6558', marginBottom: '16px' }}>
+        <p style={{ fontSize: '13px', letterSpacing: '0.1em', color: '#B8860B', marginBottom: '16px' }}>
           ORDER CONFIRMED
         </p>
         <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, fontSize: '44px', color: '#141310', margin: '0 0 20px' }}>
@@ -75,7 +75,7 @@ export default function CheckoutPage() {
           href="/"
           style={{
             display: 'inline-block', padding: '16px 34px',
-            background: '#141310', color: '#F5F3EF',
+            background: '#141310', color: '#FAF8F5',
             fontSize: '13px', letterSpacing: '0.12em', fontWeight: 500,
           }}
         >
@@ -144,7 +144,7 @@ export default function CheckoutPage() {
                 onClick={() => setStep('payment')}
                 disabled={step1Invalid}
                 style={{
-                  background: '#141310', color: '#F5F3EF', border: 'none',
+                  background: '#141310', color: '#FAF8F5', border: 'none',
                   padding: '16px', fontSize: '13px', letterSpacing: '0.12em',
                   fontWeight: 500, cursor: 'pointer', opacity: step1Invalid ? 0.4 : 1, transition: 'opacity 0.2s',
                 }}
@@ -185,7 +185,7 @@ export default function CheckoutPage() {
                   onClick={() => setStep('review')}
                   disabled={step2Invalid}
                   style={{
-                    flex: 1, background: '#141310', color: '#F5F3EF', border: 'none',
+                    flex: 1, background: '#141310', color: '#FAF8F5', border: 'none',
                     padding: '16px', fontSize: '13px', letterSpacing: '0.12em',
                     fontWeight: 500, cursor: 'pointer', opacity: step2Invalid ? 0.4 : 1, transition: 'opacity 0.2s',
                   }}
@@ -200,7 +200,7 @@ export default function CheckoutPage() {
           {step === 'review' && (
             <div style={{ maxWidth: '420px', animation: 'fadeUp 0.4s ease both' }}>
               <div style={{ marginBottom: '24px' }}>
-                <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#6b6558', marginBottom: '8px' }}>SHIP TO</p>
+                <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#B8860B', marginBottom: '8px' }}>SHIP TO</p>
                 <p style={{ fontSize: '14px', lineHeight: 1.6, color: '#141310' }}>
                   {shipping.firstName} {shipping.lastName}<br />
                   {shipping.address}<br />
@@ -208,7 +208,7 @@ export default function CheckoutPage() {
                 </p>
               </div>
               <div style={{ marginBottom: '32px' }}>
-                <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#6b6558', marginBottom: '8px' }}>PAYMENT</p>
+                <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#B8860B', marginBottom: '8px' }}>PAYMENT</p>
                 <p style={{ fontSize: '14px', color: '#141310' }}>
                   Card ending {payment.cardNumber.replace(/\s/g,'').slice(-4)}
                 </p>
@@ -226,7 +226,7 @@ export default function CheckoutPage() {
                   onClick={handlePlaceOrder}
                   disabled={loading}
                   style={{
-                    flex: 1, background: '#141310', color: '#F5F3EF', border: 'none',
+                    flex: 1, background: '#141310', color: '#FAF8F5', border: 'none',
                     padding: '16px', fontSize: '13px', letterSpacing: '0.12em',
                     fontWeight: 500, cursor: loading ? 'wait' : 'pointer',
                     opacity: loading ? 0.7 : 1, transition: 'opacity 0.2s',
@@ -240,7 +240,7 @@ export default function CheckoutPage() {
         </div>
 
         {/* ── ORDER SUMMARY ── */}
-        <div style={{ background: '#EFEAE2', padding: '32px' }}>
+        <div style={{ background: '#F5EFDE', padding: '32px' }}>
           <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '20px', fontWeight: 600, color: '#141310', marginBottom: '20px' }}>
             Order Summary
           </h3>
@@ -250,7 +250,7 @@ export default function CheckoutPage() {
               <span>${(item.price * item.quantity).toLocaleString()}</span>
             </div>
           ))}
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '16px', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #DAD4C8', color: '#141310' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '16px', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E8DFC8', color: '#141310' }}>
             <span>Total</span>
             <span style={{ fontWeight: 600 }}>${subtotal.toLocaleString()}</span>
           </div>

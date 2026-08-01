@@ -76,7 +76,7 @@ export default function SiteHeader() {
             fontSize: '20px',
             fontWeight: 600,
             letterSpacing: '0.14em',
-            color: '#F5F3EF',
+            color: '#FAF8F5',
             textDecoration: 'none',
           }}
         >
@@ -107,7 +107,7 @@ export default function SiteHeader() {
                     left: sel.left,
                     width: sel.width,
                     height: 'calc(100% - 10px)',
-                    background: '#F5F3EF',
+                    background: '#FAF8F5',
                     borderTopLeftRadius: '14px',
                     borderTopRightRadius: '14px',
                     transition:
@@ -125,7 +125,7 @@ export default function SiteHeader() {
                     left: sel.left - 18,
                     width: 18,
                     height: 18,
-                    background: '#F5F3EF',
+                    background: '#FAF8F5',
                     overflow: 'hidden',
                     transition: 'left 0.6s cubic-bezier(0.68,-0.55,0.265,1.55)',
                     zIndex: 2,
@@ -153,7 +153,7 @@ export default function SiteHeader() {
                     left: sel.left + sel.width,
                     width: 18,
                     height: 18,
-                    background: '#F5F3EF',
+                    background: '#FAF8F5',
                     overflow: 'hidden',
                     transition: 'left 0.6s cubic-bezier(0.68,-0.55,0.265,1.55)',
                     zIndex: 2,
@@ -222,7 +222,7 @@ export default function SiteHeader() {
             gap: '6px',
             fontSize: '13px',
             letterSpacing: '0.08em',
-            color: '#F5F3EF',
+            color: '#FAF8F5',
             fontWeight: 500,
             textDecoration: 'none',
           }}
@@ -237,7 +237,7 @@ export default function SiteHeader() {
                 width: '18px',
                 height: '18px',
                 borderRadius: '50%',
-                background: '#F5F3EF',
+                background: '#FAF8F5',
                 color: '#C24D00',
                 fontSize: '10px',
                 fontWeight: 600,

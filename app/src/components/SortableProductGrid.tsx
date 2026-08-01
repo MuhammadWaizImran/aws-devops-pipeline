@@ -22,7 +22,7 @@ export default function SortableProductGrid({
   if (sorted.length === 0) {
     return (
       <div style={{ padding: '60px 0', textAlign: 'center' }}>
-        <p style={{ fontSize: '16px', color: '#6b6558' }}>No products found in this category.</p>
+        <p style={{ fontSize: '16px', color: '#B8860B' }}>No products found in this category.</p>
       </div>
     )
   }
@@ -37,7 +37,7 @@ export default function SortableProductGrid({
           marginBottom: '24px',
         }}
       >
-        <p style={{ fontSize: '13px', color: '#6b6558' }}>
+        <p style={{ fontSize: '13px', color: '#B8860B' }}>
           {products.length} product{products.length !== 1 ? 's' : ''}
         </p>
         <select
@@ -45,8 +45,8 @@ export default function SortableProductGrid({
           onChange={(e) => setSort(e.target.value as SortOption)}
           style={{
             padding: '8px 14px',
-            border: '1px solid #DAD4C8',
-            background: '#F5F3EF',
+            border: '1px solid #E8DFC8',
+            background: '#FAF8F5',
             color: '#141310',
             fontSize: '13px',
             cursor: 'pointer',

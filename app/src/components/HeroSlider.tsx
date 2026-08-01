@@ -72,11 +72,11 @@ export default function HeroSlider() {
           zIndex: 3,
           padding: '0 48px 64px',
           width: '100%',
-          color: '#F5F3EF',
+          color: '#FAF8F5',
           animation: 'fadeUp 0.9s cubic-bezier(.16,1,.3,1) both',
         }}
       >
-        <p style={{ fontSize: '13px', letterSpacing: '0.2em', marginBottom: '14px', color: '#DAD4C8' }}>
+        <p style={{ fontSize: '13px', letterSpacing: '0.2em', marginBottom: '14px', color: '#E8DFC8' }}>
           AUTUMN / WINTER 2026
         </p>
         <h1
@@ -97,7 +97,7 @@ export default function HeroSlider() {
             display: 'inline-block',
             padding: '16px 34px',
             background: '#141310',
-            color: '#F5F3EF',
+            color: '#FAF8F5',
             fontSize: '13px',
             letterSpacing: '0.12em',
             fontWeight: 500,
@@ -125,7 +125,7 @@ export default function HeroSlider() {
             style={{
               width: i === current ? '28px' : '8px',
               height: '8px',
-              background: i === current ? '#F5F3EF' : 'rgba(245,243,239,0.4)',
+              background: i === current ? '#FAF8F5' : 'rgba(245,243,239,0.4)',
               border: 'none',
               cursor: 'pointer',
               transition: 'all 0.4s ease',

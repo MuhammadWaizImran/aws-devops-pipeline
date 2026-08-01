@@ -20,7 +20,7 @@ export default function HomePage() {
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
           gap: '2px',
-          background: '#DAD4C8',
+          background: '#E8DFC8',
         }}
       >
         {categories.map((cat) => (
@@ -44,7 +44,7 @@ export default function HomePage() {
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 10px,#D9D3C8 10px,#D9D3C8 20px)',
+                  background: 'repeating-linear-gradient(45deg,#D4C9A8,#D4C9A8 10px,#E8DFC8 10px,#E8DFC8 20px)',
                 }}
               />
             )}
@@ -128,7 +128,7 @@ export default function HomePage() {
               <div
                 style={{
                   aspectRatio: '3/4',
-                  background: 'repeating-linear-gradient(45deg,#C9C2B5,#C9C2B5 10px,#D9D3C8 10px,#D9D3C8 20px)',
+                  background: 'repeating-linear-gradient(45deg,#D4C9A8,#D4C9A8 10px,#E8DFC8 10px,#E8DFC8 20px)',
                   marginBottom: '14px',
                   overflow: 'hidden',
                   position: 'relative',
@@ -141,7 +141,7 @@ export default function HomePage() {
               <p style={{ fontSize: '14px', marginBottom: '4px', color: '#141310' }}>
                 {product.name}
               </p>
-              <p style={{ fontSize: '14px', color: '#6b6558' }}>${product.price}</p>
+              <p style={{ fontSize: '14px', color: '#B8860B' }}>${product.price}</p>
             </Link>
           ))}
         </div>
@@ -152,7 +152,7 @@ export default function HomePage() {
           position: 'relative',
           height: '60vh',
           minHeight: '420px',
-          background: 'repeating-linear-gradient(70deg,#EFEAE2,#EFEAE2 16px,#E3DCCF 16px,#E3DCCF 32px)',
+          background: 'repeating-linear-gradient(70deg,#F5EFDE,#F5EFDE 16px,#EDE3CC 16px,#EDE3CC 32px)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
