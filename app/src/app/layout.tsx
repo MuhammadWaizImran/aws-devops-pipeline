@@ -3,7 +3,6 @@ import './globals.css'
 import { CartProvider } from '@/lib/cart'
 import SiteHeader from './SiteHeader'
 import ScrollReveal from '@/components/ScrollReveal'
-import SplashScreen from '@/components/SplashScreen'
 
 export const metadata: Metadata = {
   title: 'Prime Bazaar',
@@ -43,7 +42,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <CartProvider>
-          <SplashScreen />
           <SiteHeader />
           <ScrollReveal />
           <main>{children}</main>
@@ -51,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <footer
             style={{
               background: '#141310',
-              color: '#FAF8F5',
+              color: '#FFFFFF',
               padding: '60px 24px 40px',
               marginTop: '80px',
               borderTop: '1px solid #2b2820',

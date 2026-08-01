@@ -29,7 +29,7 @@ const ACCORDION_DEFS: { key: AccordionKey; title: string; body: (desc: string) =
 ]
 
 const PLACEHOLDER =
-  'repeating-linear-gradient(45deg,#D4C9A8,#D4C9A8 8px,#E8DFC8 8px,#E8DFC8 16px)'
+  'repeating-linear-gradient(45deg,#DADADA,#DADADA 8px,#E5E5E5 8px,#E5E5E5 16px)'
 
 export default function ProductPage() {
   const params = useParams()
@@ -159,9 +159,9 @@ export default function ProductPage() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    border: `1px solid ${selectedSize === size ? '#141310' : '#E8DFC8'}`,
+                    border: `1px solid ${selectedSize === size ? '#141310' : '#E5E5E5'}`,
                     background: selectedSize === size ? '#141310' : 'transparent',
-                    color: selectedSize === size ? '#FAF8F5' : '#141310',
+                    color: selectedSize === size ? '#FFFFFF' : '#141310',
                     fontSize: '13px',
                     cursor: 'pointer',
                     transition: 'all 0.2s',
@@ -176,7 +176,7 @@ export default function ProductPage() {
           {/* QUANTITY */}
           <div style={{ marginBottom: '32px' }}>
             <p style={{ fontSize: '13px', letterSpacing: '0.08em', color: '#141310', marginBottom: '12px' }}>QUANTITY</p>
-            <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #E8DFC8', width: '120px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #E5E5E5', width: '120px' }}>
               <button onClick={() => setQty((q) => Math.max(1, q - 1))} style={{ flex: 1, padding: '10px', fontSize: '16px', cursor: 'pointer', color: '#141310' }}>
                 &minus;
               </button>
@@ -194,7 +194,7 @@ export default function ProductPage() {
             style={{
               width: '100%',
               background: '#141310',
-              color: '#FAF8F5',
+              color: '#FFFFFF',
               border: 'none',
               padding: '18px',
               fontSize: '13px',
@@ -213,9 +213,9 @@ export default function ProductPage() {
           </p>
 
           {/* ACCORDIONS */}
-          <div style={{ borderTop: '1px solid #E8DFC8' }}>
+          <div style={{ borderTop: '1px solid #E5E5E5' }}>
             {ACCORDION_DEFS.map(({ key, title, body }) => (
-              <div key={key} style={{ borderBottom: '1px solid #E8DFC8' }}>
+              <div key={key} style={{ borderBottom: '1px solid #E5E5E5' }}>
                 <button
                   onClick={() => toggleAccordion(key)}
                   style={{
@@ -254,7 +254,7 @@ export default function ProductPage() {
             bottom: '32px',
             right: '32px',
             background: '#7A5230',
-            color: '#FAF8F5',
+            color: '#FFFFFF',
             padding: '16px 24px',
             fontSize: '13px',
             letterSpacing: '0.04em',

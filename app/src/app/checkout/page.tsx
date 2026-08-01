@@ -18,8 +18,8 @@ const STEPS: Step[] = ['shipping', 'payment', 'review']
 const STEP_LABELS = { shipping: '1. SHIPPING', payment: '2. PAYMENT', review: '3. REVIEW', confirmed: '' }
 
 const inputStyle: React.CSSProperties = {
-  width: '100%', padding: '14px', border: '1px solid #E8DFC8',
-  background: '#FAF8F5', fontSize: '14px', color: '#141310', outline: 'none',
+  width: '100%', padding: '14px', border: '1px solid #E5E5E5',
+  background: '#FFFFFF', fontSize: '14px', color: '#141310', outline: 'none',
 }
 const labelStyle: React.CSSProperties = {
   display: 'block', fontSize: '11px', letterSpacing: '0.1em',
@@ -75,7 +75,7 @@ export default function CheckoutPage() {
           href="/"
           style={{
             display: 'inline-block', padding: '16px 34px',
-            background: '#141310', color: '#FAF8F5',
+            background: '#141310', color: '#FFFFFF',
             fontSize: '13px', letterSpacing: '0.12em', fontWeight: 500,
           }}
         >
@@ -144,7 +144,7 @@ export default function CheckoutPage() {
                 onClick={() => setStep('payment')}
                 disabled={step1Invalid}
                 style={{
-                  background: '#141310', color: '#FAF8F5', border: 'none',
+                  background: '#141310', color: '#FFFFFF', border: 'none',
                   padding: '16px', fontSize: '13px', letterSpacing: '0.12em',
                   fontWeight: 500, cursor: 'pointer', opacity: step1Invalid ? 0.4 : 1, transition: 'opacity 0.2s',
                 }}
@@ -185,7 +185,7 @@ export default function CheckoutPage() {
                   onClick={() => setStep('review')}
                   disabled={step2Invalid}
                   style={{
-                    flex: 1, background: '#141310', color: '#FAF8F5', border: 'none',
+                    flex: 1, background: '#141310', color: '#FFFFFF', border: 'none',
                     padding: '16px', fontSize: '13px', letterSpacing: '0.12em',
                     fontWeight: 500, cursor: 'pointer', opacity: step2Invalid ? 0.4 : 1, transition: 'opacity 0.2s',
                   }}
@@ -226,7 +226,7 @@ export default function CheckoutPage() {
                   onClick={handlePlaceOrder}
                   disabled={loading}
                   style={{
-                    flex: 1, background: '#141310', color: '#FAF8F5', border: 'none',
+                    flex: 1, background: '#141310', color: '#FFFFFF', border: 'none',
                     padding: '16px', fontSize: '13px', letterSpacing: '0.12em',
                     fontWeight: 500, cursor: loading ? 'wait' : 'pointer',
                     opacity: loading ? 0.7 : 1, transition: 'opacity 0.2s',
@@ -240,7 +240,7 @@ export default function CheckoutPage() {
         </div>
 
         {/* ── ORDER SUMMARY ── */}
-        <div style={{ background: '#F5EFDE', padding: '32px' }}>
+        <div style={{ background: '#F7F7F7', padding: '32px' }}>
           <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '20px', fontWeight: 600, color: '#141310', marginBottom: '20px' }}>
             Order Summary
           </h3>
@@ -250,7 +250,7 @@ export default function CheckoutPage() {
               <span>${(item.price * item.quantity).toLocaleString()}</span>
             </div>
           ))}
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '16px', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E8DFC8', color: '#141310' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '16px', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E5E5E5', color: '#141310' }}>
             <span>Total</span>
             <span style={{ fontWeight: 600 }}>${subtotal.toLocaleString()}</span>
           </div>

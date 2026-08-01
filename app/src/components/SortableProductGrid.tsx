@@ -45,8 +45,8 @@ export default function SortableProductGrid({
           onChange={(e) => setSort(e.target.value as SortOption)}
           style={{
             padding: '8px 14px',
-            border: '1px solid #E8DFC8',
-            background: '#FAF8F5',
+            border: '1px solid #E5E5E5',
+            background: '#FFFFFF',
             color: '#141310',
             fontSize: '13px',
             cursor: 'pointer',

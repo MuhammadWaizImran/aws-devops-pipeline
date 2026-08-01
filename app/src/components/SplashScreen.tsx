@@ -38,7 +38,7 @@ export default function SplashScreen() {
           fontFamily: "'Cormorant Garamond', serif",
           fontSize: 'clamp(36px, 8vw, 88px)',
           fontWeight: 400,
-          color: '#FAF8F5',
+          color: '#FFFFFF',
           letterSpacing: '0.22em',
           animation: 'splashIn 1.5s cubic-bezier(.16,1,.3,1) both',
           textAlign: 'center',
@@ -51,7 +51,7 @@ export default function SplashScreen() {
         style={{
           height: '1px',
           width: '56px',
-          background: '#E8DFC8',
+          background: '#E5E5E5',
           transformOrigin: 'center',
           animation: 'splashLine 0.9s 0.5s ease both',
         }}

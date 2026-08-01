@@ -16,7 +16,7 @@ html {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  background: #FAF8F5;
+  background: #FFFFFF;
   color: #141310;
   line-height: 1.6;
 }
@@ -60,7 +60,7 @@ textarea {
 }
 
 .footer-link:hover {
-  color: #FAF8F5;
+  color: #FFFFFF;
 }
 
 /* ── Animations ─────────────────────────────── */

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useCart } from '@/lib/cart'
 
-const PLACEHOLDER = 'repeating-linear-gradient(45deg,#D4C9A8,#D4C9A8 8px,#E8DFC8 8px,#E8DFC8 16px)'
+const PLACEHOLDER = 'repeating-linear-gradient(45deg,#DADADA,#DADADA 8px,#E5E5E5 8px,#E5E5E5 16px)'
 
 export default function CartPage() {
   const { items, removeItem, updateQty, subtotal } = useCart()
@@ -27,7 +27,7 @@ export default function CartPage() {
             display: 'inline-block',
             padding: '16px 34px',
             background: '#141310',
-            color: '#FAF8F5',
+            color: '#FFFFFF',
             fontSize: '13px',
             letterSpacing: '0.12em',
             fontWeight: 500,
@@ -56,7 +56,7 @@ export default function CartPage() {
                 gridTemplateColumns: '100px 1fr auto',
                 gap: '20px',
                 padding: '24px 0',
-                borderBottom: '1px solid #F5EFDE',
+                borderBottom: '1px solid #F7F7F7',
                 alignItems: 'center',
               }}
             >
@@ -71,7 +71,7 @@ export default function CartPage() {
               <div>
                 <p style={{ fontSize: '15px', color: '#141310', marginBottom: '6px' }}>{item.name}</p>
                 <p style={{ fontSize: '13px', color: '#B8860B', marginBottom: '12px' }}>Size {item.size}</p>
-                <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #E8DFC8', width: '110px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #E5E5E5', width: '110px' }}>
                   <button
                     onClick={() => updateQty(item.productId, item.size, Math.max(1, item.quantity - 1))}
                     style={{ flex: 1, padding: '8px', cursor: 'pointer', color: '#141310' }}
@@ -107,7 +107,7 @@ export default function CartPage() {
         </div>
 
         {/* Order Summary */}
-        <div style={{ background: '#F5EFDE', padding: '32px' }}>
+        <div style={{ background: '#F7F7F7', padding: '32px' }}>
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '20px', fontWeight: 600, color: '#141310', marginBottom: '20px' }}>
             Order Summary
           </h2>
@@ -119,7 +119,7 @@ export default function CartPage() {
             <span style={{ color: '#B8860B' }}>Shipping</span>
             <span style={{ color: '#B8860B' }}>Free</span>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '16px', margin: '20px 0', paddingTop: '16px', borderTop: '1px solid #E8DFC8' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '16px', margin: '20px 0', paddingTop: '16px', borderTop: '1px solid #E5E5E5' }}>
             <span style={{ color: '#141310' }}>Total</span>
             <span style={{ color: '#141310', fontWeight: 600 }}>${subtotal.toLocaleString()}</span>
           </div>
@@ -130,7 +130,7 @@ export default function CartPage() {
               width: '100%',
               padding: '18px',
               background: '#141310',
-              color: '#FAF8F5',
+              color: '#FFFFFF',
               fontSize: '13px',
               letterSpacing: '0.12em',
               fontWeight: 500,
